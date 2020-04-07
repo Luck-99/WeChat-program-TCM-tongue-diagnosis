@@ -153,13 +153,6 @@ Page({
                 })) : a.setData({
                     iswxauth: !1
                 });
-                wx.showLoading({
-                  title: t.data.nickname,
-                  mask: true,
-                  success: function(res) {},
-                  fail: function(res) {},
-                  complete: function(res) {},
-                })
             },
            complete: function() {
                 setTimeout(function() {
