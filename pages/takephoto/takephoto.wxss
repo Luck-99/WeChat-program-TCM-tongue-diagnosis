@@ -1,0 +1,147 @@
+.page-body{
+  background: rgba(0, 0, 0, 0.5);
+}
+.preview-tips {
+    margin: 20rpx 0;
+}
+
+.camera_1 {
+    z-index: 88;
+    width: 100%;
+    height: 80vh;
+    margin-top: 0;
+    margin-left: 0vw;
+    top: 0rpx;
+}
+
+.img_2 {
+    z-index: 101;
+    position: absolute;
+    width: 96vw;
+    height: 75vh;
+}
+
+.img_11 {
+    z-index: 100;
+    margin-top: 0;
+    position: absolute;
+    width: 96vw;
+    height: 75vh;
+}
+
+.img_3 {
+    margin-left: 160rpx;
+    position: fixed;
+    bottom: 150rpx;
+    width: 430rpx;
+    height: 80rpx;
+}
+
+.img_4 {
+    margin-left: 160rpx;
+    position: fixed;
+    bottom: 150rpx;
+    width: 430rpx;
+    height: 80rpx;
+    z-index: 104;
+}
+
+.text_1 {
+    width: 100vw;
+    position: fixed;
+    bottom: 80rpx;
+    text-align: center;
+}
+
+.text_1_1 {
+    margin: 0 auto;
+    width: 250rpx;
+    height: 30rpx;
+}
+
+.text_2 {
+    position: fixed;
+    bottom: 80rpx;
+    text-align: center;
+    width: 100vw;
+}
+
+.text_2_1 {
+    margin: 0 auto;
+    width: 250rpx;
+    height: 30rpx;
+}
+
+.zhuan {
+    width: 80rpx;
+    height: 80rpx;
+    z-index: 102;
+    position: fixed;
+    top: 65vh;
+    left: 80vw;
+}
+
+.zhuanhuan {
+    height: 80rpx;
+    width: 80rpx;
+}
+
+.vei {
+    width: 100vw;
+    height: 180rpx;
+    margin-top: 14rpx;
+    display: flex;
+    justify-content: space-around;
+    z-index: 89;
+}
+
+.yulan {
+    height: 180rpx;
+    width: 180rpx;
+    background: #CFCFCF;
+}
+
+.vei1 {
+    width: 100vw;
+    height: 180rpx;
+    margin-top: -180rpx;
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.yulan1 {
+    height: 180rpx;
+    width: 180rpx;
+}
+
+.scunimg {
+    width: 339rpx;
+    height: 422rpx;
+    z-index: 150;
+    position: fixed;
+    top: 336rpx;
+    left: 205rpx;
+}
+
+
+.back{
+    width: 100%;
+    height: 80vh;
+    z-index: 90;
+    position: fixed;
+}
+
+.bottombotton{
+  width: 100%;
+  height: 20vh;
+  background: rgba(0, 0, 0, 0.5);
+
+}
+
+.camera_prompt {
+    color: white;
+    text-align: center;
+    font-size: 32rpx;
+    margin-top: 20rpx;
+}

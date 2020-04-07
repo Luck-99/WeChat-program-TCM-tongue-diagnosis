@@ -1,0 +1,10 @@
+<view bindtap="hidewindow" catchtouchmove="nomoveopt" class="service_boxs mask">
+    <view class="show_qiaodao_jifen">
+        <view class="contentxt">
+            <image class="avatar" src="/resources/avatar.png"></image>
+        </view>
+        <view class="authtip">欢迎使用贝叶斯AI智能舌诊系统</view>
+        <button bindgetuserinfo="getUserInfo" class="btnv" lang="zh_CN" openType="getUserInfo">微信授权
+    </button>
+    </view>
+</view>

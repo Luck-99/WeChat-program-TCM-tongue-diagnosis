@@ -1,0 +1,8 @@
+<view class="shibiev" wx:if="{{showshibie}}">
+    <image class="loadding" src="https://royal-doctor-imgs-1256678596.cos.ap-beijing.myqcloud.com/index-load.gif"></image>
+    <view class="tipt">正在辨识您的体质，请稍后…</view>
+</view>
+<view bindtap="freshopt" class="timeoutv" wx:if="{{showtimeout}}">
+    <image class="nonet" src="/resources/wuwangluo.png"></image>
+    <view class="freshbtn">点击刷新</view>
+</view>

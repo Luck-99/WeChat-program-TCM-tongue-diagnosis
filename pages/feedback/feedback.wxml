@@ -1,0 +1,16 @@
+<view class="bac" style="height:{{heizz}}">
+    <view class="feedv">
+        <view class="feedtext1">意见反馈</view>
+        <view class="feedtext2">请详细描述您的问题或建议，我们将及时跟进解决</view>
+    </view>
+    <view class="feedb">
+        <textarea bindinput="feedInput" class="input" confirmType="done" maxlength="140" placeholder="请输入您宝贵的意见" type="text" value=""></textarea>
+    </view>
+    <checkbox-group bindchange="checkboxChange" class="checkboxgroup">
+        <label class="checkbox" wx:for="{{items}}">
+            <checkbox checked="{{item.checked}}" color="#CBB18E" value="{{item.name}}"></checkbox>
+    {{item.value}}
+  </label>
+    </checkbox-group>
+    <view bindtap="tijiao" class="tijiao">提交</view>
+</view>

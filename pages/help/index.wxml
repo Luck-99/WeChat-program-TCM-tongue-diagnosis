@@ -1,0 +1,21 @@
+<view class="titlev">使用帮助</view>
+<view class="categoryv">
+    <image class="categoryicon" src="/resources/step.png"></image>
+</view>
+<view class="infov">在主页点击“拍照测试”后，可以在手机相册中选择自己的舌头照片，也可以对自己的舌头进行拍照。上传成功后，机器人会自动识别舌头，并生成一份体质报告。</view>
+<view class="categoryv">
+    <image class="categoryicon" src="/resources/tip.png"></image>
+</view>
+<view class="infov">（1）请在光线充足的地方拍照，请上传完整的舌头照片，不能有阴影或遮挡。</view>
+<view class="shev">
+    <image class="shepng" src="/resources/she.png"></image>
+</view>
+<view class="infov">（2）吃了有颜色的食物不易看舌象</view>
+<view class="infovv">有颜色的食物"不仅仅指蓝莓、樱桃、桑椹等水果，还包括浓茶、咖啡和酒。</view>
+<view class="infov">（3）晨起不要看舌象</view>
+<view class="infovv">早上醒来时人体血液循环很慢，舌象往往颜色浅，舌苔也会变厚，舌头显得很干燥。一般以9:00-12:00点测试结果为准。</view>
+<view class="infov">（4）尽量不要在饭后半小时内舌象</view>
+<view class="infovv">吃饭时舌头参与了食物的搅拌和咀嚼，血液循环加快，血液会特别充盈，这时候舌质会变红。</view>
+<view class="infov">（5）尽量不要在有色光下拍照看舌象</view>
+<view class="infov">（6）尽量不要在月经期间拍照看舌象</view>
+<view class="infovv">女性在月经期时，舌尖会变红，容易误判为有心火。</view>

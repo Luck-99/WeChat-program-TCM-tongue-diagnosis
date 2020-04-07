@@ -1,0 +1,35 @@
+<view class="page-body">
+    <view class="page-body-wrapper">
+        <camera binderror="error" class="camera_1" devicePosition="{{qianhou}}" flash="torch">
+            <cover-view class="back">
+                <cover-image mode="scaleToFill" src="/resources/mengban.png"></cover-image>
+            </cover-view>
+            <cover-image class="img_2" mode="widthFix" src="{{imgsrc}}" style="display:{{display1}}" wx:if="{{imgsrc}}"></cover-image>
+            <cover-view class="camera_prompt">请把舌头置于摄像头内进行拍照识别</cover-view>
+            <cover-view bindtap="cameradirection" class="zhuan">
+                <cover-image class="zhuanhuan" src="/resources/zhuanhuan.png"></cover-image>
+            </cover-view>
+            
+            <cover-view class="scunimg" style="display:{{display3}}">
+                <cover-image mode="scaleToFill" src="/resources/scsuccess.png" style="width:339rpx"></cover-image>
+            </cover-view>
+            <cover-view class="scunimg" style="display:{{display4}}">
+                <cover-image mode="scaleToFill" src="/resources/scunsuccess.png" style="width:339rpx"></cover-image>
+            </cover-view>
+            <cover-view class="scunimg" style="display:{{display5}}">
+                <cover-image mode="scaleToFill" src="/resources/unface.png" style="width:339rpx"></cover-image>
+            </cover-view>
+        </camera>
+    </view>
+    <view class="bottombotton">
+        <view bindtap="view_2" class="text_1" style="display:{{display2}}">
+            <text class="text_1_1" style="color:#999999 ">从相册中选择</text>
+        </view>
+        <image bindtap="takePhoto" class="img_3" src="../../resources/takephoto.png" style="display:{{display2}}"></image>
+        <image bindtap="takePhoto_2" class="img_4" src="../../resources/confirm.png" style="display:{{display1}}"></image>
+    </view>
+    
+    <view bindtap="view_3" class="text_2" style="display:{{display1}}">
+        <text class="text_2_1" style="color:#B53D18">重拍</text>
+    </view>
+</view>

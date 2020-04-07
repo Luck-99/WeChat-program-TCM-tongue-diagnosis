@@ -1,0 +1,42 @@
+.photov {
+    width: 100vw;
+    margin-top: 56rpx;
+    text-align: center;
+}
+
+.cover {
+    width: 480rpx;
+    height: 600rpx;
+    background: #B8B8B8;
+}
+
+.tipv {
+    width: 100vw;
+    height: 152rpx;
+    background: #cbb18e;
+    margin-top: 72rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #5a421a;
+    font-weight: bold;
+}
+
+.onev {
+    padding-top: 36rpx;
+}
+
+.twov {
+    margin-top: 5rpx;
+}
+
+.btnoptv {
+    width: 100vw;
+    height: 90rpx;
+    text-align: center;
+    margin-top: 56rpx;
+}
+
+.btnopt {
+    width: 492rpx;
+    height: 90rpx;
+}

@@ -1,0 +1,1 @@
+<image bindtap="gointro" class="typeimg" data-id="{{item.id}}" src="{{item.imgurl}}" wx:for="{{list}}" wx:key="item"></image>

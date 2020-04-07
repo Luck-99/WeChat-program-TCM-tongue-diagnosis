@@ -1,0 +1,67 @@
+.shibiev {
+    margin: 244rpx 200rpx 52rpx 200rpx;
+}
+
+.loadding {
+    width: 320rpx;
+    height: 320rpx;
+}
+
+.tipt {
+    text-align: center;
+    margin-top: 52rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba(125,74,17,1);
+}
+
+.move1 {
+    animation: myMove1 5s ease-in infinite alternate;
+}
+
+@keyframes myMove1 {
+    from {
+        transform: rotateZ(0);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes myMove1 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.timeoutv {
+    width: 100vw;
+    height: 100vh;
+    background: #E9E9E9;
+    text-align: center;
+}
+
+.nonet {
+    width: 200rpx;
+    height: 200rpx;
+    margin-top: 354rpx;
+    margin-bottom: 116rpx;
+}
+
+.freshbtn {
+    border: 1rpx solid #7D4A11;
+    width: 216rpx;
+    height: 64rpx;
+    text-align: center;
+    line-height: 64rpx;
+    font-size: 32rpx;
+    color: #7D4A11;
+    border-radius: 32rpx;
+    margin: 0 auto;
+}

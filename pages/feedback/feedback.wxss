@@ -1,0 +1,62 @@
+.bac {
+    background: #e9e9e9;
+}
+
+.feedv {
+    background: #CBB18E;
+    height: 210rpx;
+    width: 100vw;
+}
+
+.feedtext1 {
+    padding-top: 80rpx;
+    margin-left: 44rpx;
+    font-size: 36rpx;
+    color: white;
+}
+
+.feedtext2 {
+    margin-left: 44rpx;
+    margin-top: 24rpx;
+    font-size: 24rpx;
+    color: white;
+}
+
+.feedb {
+    height: 300rpx;
+    width: 100vw;
+    background: white;
+}
+
+.input {
+    width: 662rpx;
+    color: #B2B2B2;
+    font-size: 28rpx;
+    padding-top: 40rpx;
+    padding-left: 44rpx;
+}
+
+.tijiao {
+    color: white;
+    background: #CBB18E;
+    height: 80rpx;
+    width: 250rpx;
+    border-radius: 50rpx;
+    text-align: center;
+    line-height: 80rpx;
+    position: fixed;
+    bottom: 130rpx;
+    left: 250rpx;
+}
+
+.checkboxgroup {
+    margin-left: 20rpx;
+    margin-top: 24rpx;
+}
+
+.checkbox {
+    display: block;
+    font-size: 25rpx;
+    margin-bottom: 13rpx;
+    color: #666;
+}

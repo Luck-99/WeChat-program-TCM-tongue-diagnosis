@@ -1,0 +1,10 @@
+<view class="photov">
+    <image bindtap="photoopt" class="cover" lazyLoad="true" mode="aspectFill" src="{{photo}}"></image>
+</view>
+<view class="tipv">
+    <view class="onev">您的照片质量过低</view>
+    <view class="twov">请重新上传照片</view>
+</view>
+<view class="btnoptv">
+    <image bindtap="photoopt" class="btnopt" src="/resources/rephoto.png"></image>
+</view>

@@ -1,0 +1,29 @@
+<block wx:if="{{showdata}}">
+    <view class="userinfov">
+        <view class="userinfo-avatar">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="userNickName">
+            <open-data type="userNickName"></open-data>
+            <view class="tipv">的体质辨识记录</view>
+        </view>
+    </view>
+    <block wx:if="{{list.length>0}}">
+        <view class="geduanv"></view>
+        <view bindtap="goresult" class="recordv border{{item.type}}" data-time="{{item.date}}" data-tizhi="{{item.typeval2}}" wx:for="{{list}}" wx:key="item">
+            <view class="leftv">
+                <view class="datev">{{item.date}}</view>
+                <view class="typev">{{item.typeval}}</view>
+            </view>
+        </view>
+        <view class="btmlinev">
+            <view class="linev"></view>
+            <view class="linet">没有更多了</view>
+            <view class="linev"></view>
+        </view>
+    </block>
+    <view class="nodatatipv" wx:else>
+        <image class="nodataicon" src="/resources/null.png"></image>
+        <view class="nodatatipt">还没检测过呢～先去拍照吧</view>
+    </view>
+</block>

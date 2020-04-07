@@ -1,0 +1,59 @@
+<image class="topimg" src="/resources/hpbcck.png"></image>
+<view class="tipv">
+    <view class="companyv">贝叶斯科技丨</view>
+    <view class="typev">AI舌象分析</view>
+    <view bindtap="username" class="login" wx:if="{{islogin}}">{{username}}</view>
+    <view bindtap="getusername" class="{{loginshow?'':'username'}}" wx:if="{{!islogin}}" open-type="getUserInfo">{{username}}</view>
+</view>
+<view class="photov">
+    <image bindtap="photoopt" class="photoiconshow"
+    src="https://royal-doctor-imgs-1256678596.cos.ap-beijing.myqcloud.com/index-photo-but.gif"></image>
+    <image bindtap="photologin" class="{{loginshow?'photousershow':'photouserhide'}}" wx:if="{{islogin}}"
+    src="/resources/photouserlogin.gif"></image>
+</view>
+<view class="wenanv1">请使用后置摄像头拍摄舌头正面照</view>
+<view class="wenanv2">请在无色光下使用</view>
+<view class="wenanv3">详细注意事项请查看帮助</view>
+<view class="optv">
+    <view bindtap="gorecord" class="optvv">
+        <image class="iconv" src="/resources/time.png"></image>
+        <view class="optt">健康趋势</view>
+    </view>
+    <view bindtap="gohelp" class="optvv">
+        <image class="iconv" src="/resources/help.png"></image>
+        <view class="optt">使用帮助</view>
+    </view>
+    <view bindtap="sharefriends" class="optvv">
+        <image class="iconv" src="/resources/share.png"></image>
+        <view class="optt">分享朋友</view>
+    </view>
+    <view bindtap="gocontact" class="optvv">
+        <image class="iconv" src="/resources/contact.png"></image>
+        <view class="optt">建议反馈</view>
+    </view>
+</view>
+<view catchtouchmove="nomoveopt" class="service_boxs mask" wx:if="{{!iswxauth}}">
+    <view class="show_qiaodao_jifen">
+        <view class="contentxt">
+            <image class="avatar" src="/resources/avatar.png"></image>
+        </view>
+        <view class="authtip">欢迎使用贝叶斯AI智能舌诊系统</view>
+        <button bindtap="Deauthorization" class="btnv">取消授权</button>
+        <button bindgetuserinfo="getUserInfo" class="btnv" lang="zh_CN" openType="getUserInfo">微信授权
+    </button>
+    </view>
+</view>
+<view class="point" wx:if="{{!ispoint}}">
+    <view bindtap="pointyes" class="point2">
+        <image class="point_img" src="/resources/login_point.png"></image>
+    </view>
+</view>
+<view bindtap="contact2" catchtouchmove="nomoveopt" class="service_boxs mask" wx:if="{{!iscontact}}">
+    <view class="show_qiaodao_jifen">
+        <view class="authtip2">建议反馈</view>
+        <view class="authtip3">武先生：{{contents}}</view>
+        <view class="authtip4">（手机/微信同号）</view>
+        <view bindtap="copyText" class="btnv2" data-text="{{contents}}">复制号码
+          </view>
+    </view>
+</view>

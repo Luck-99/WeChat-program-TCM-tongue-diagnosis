@@ -1,0 +1,51 @@
+.titlev {
+    font-size: 36rpx;
+    text-align: center;
+    color: #633e1d;
+    margin-top: 28rpx;
+}
+
+.categoryv {
+    width: 200rpx;
+    height: 72rpx;
+    margin-left: 36rpx;
+    margin-top: 16rpx;
+}
+
+.categoryicon {
+    width: 200rpx;
+    height: 72rpx;
+    display: block;
+}
+
+.xunhuan {
+    width: 365rpx;
+    height: 250rpx;
+    display: block;
+    position: relative;
+    top: -155rpx;
+    left: -120rpx;
+}
+
+.infov {
+    color: #77502D;
+    font-size: 28rpx;
+    margin: 16rpx 54rpx 12rpx 36rpx;
+}
+
+.shev {
+    width: 100vw;
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+.shepng {
+    width: 208rpx;
+    height: 264rpx;
+}
+
+.infovv {
+    margin: 4rpx 38rpx 16rpx 108rpx;
+    color: #999;
+    font-size: 24rpx;
+}
