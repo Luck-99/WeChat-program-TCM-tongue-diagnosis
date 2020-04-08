@@ -8,23 +8,38 @@ Page({
         iscontact: !0,
         username: '欢迎你',
         contents: "18500860320",
-        loginshow:true
+        loginshow:true,
+        canIUse: wx.canIUse('button.open-type.getUserInfo')
     },
-    onLoad: function(t) {},
-    getUserInfo: function(t) {
+    onLoad: function(t) {
+      wx.getSetting({
+        success: function(res) {
+          if (res.authSetting['scope.userInfo']){
+            wx.getUserInfo({
+              success: function(res) {
+                console(res.userInfo)
+              },
+            })
+          }
+        },
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    },
+    bindGetUserInfo (e) {
+      console.log(e.detail.userInfo)
+    },
+    /*getUserInfo: function(t) {
         var a = this;
         console.log("授权信息:", t), "getUserInfo:ok" == t.detail.errMsg ? (a.SaveWxUser(t.detail.userInfo), 
         getApp().globalData.userInfo = t.detail.userInfo, a.setData({
             islogin: !1,
             iswxauth: !0,
-            success:function(a){
-              var userInfo = a.userInfo
-              var nickName = userInfo.nickName
-              }
+            success:function(a){ }
         })) : (console.log("拒绝授权信息！"), a.setData({
             iswxauth: !1
         }));
-    },
+    },*/
     SaveWxUser: function(a) {
         var o = this;
         wx.request({
@@ -106,31 +121,47 @@ Page({
     },
     photologin: function(){
       var t = this;
+      wx.login({
+        success: function(res) {
+          wx.getUserInfo({
+            success: function(res) {
+              var simpleUser = res.userInfo;
+              console.log(simpleUser.nickName);
+              wx.request({
+                url: 'https://120.26.172.111/test.php',
+                data: {
+                  username: simpleUser.nickName,
+                  openid: simpleUser.openID
+                },
+                header: {
+                  'content-type': 'application/json'
+                },
+                method: 'GET',
+                dataType: 'json',
+                responseType: 'text',
+                success: function (res) { console.log(res.data) },
+                fail: function (res) { console.log("失败") },
+                complete: function (res) { },
+              });
+              
+            },
+            fail: function(res) {},
+            complete: function(res) {},
+          });
+        },
+        fail: function(res) {},
+        complete: function(res) {},
+      });
       "" == getApp().globalData.openID ? getApp().GetWxOpenID().then(function (a) {
-        wx.showLoading({
-          title: "正在登录中...",
+        /*wx.showLoading({
+          title: 'NickName',
           mask: !0
-        }), t.InitUserData();
+        }),*/t.InitUserData();
       }) : t.InitUserData();
       this.setData({
         loginshow: false
       }); 
-      wx.request({
-        url: 'https://120.26.172.111/test.php',
-        data: {
-          username: t.username,
-          openid: t.openID
-        },
-        header: {
-          'content-type': 'application/json'
-        },
-        method: 'GET',
-        dataType: 'json',
-        responseType: 'text',
-        success: function (res) { console.log(res.data) },
-        fail: function (res) { console.log("失败") },
-        complete: function (res) { },
-      });
+      
     },    
     InitUserData: function() {
         var a = this;

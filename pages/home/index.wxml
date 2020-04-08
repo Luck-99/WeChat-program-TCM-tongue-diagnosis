@@ -3,13 +3,13 @@
     <view class="companyv">贝叶斯科技丨</view>
     <view class="typev">AI舌象分析</view>
     <view bindtap="username" class="login" wx:if="{{islogin}}">{{username}}</view>
-    <view bindtap="getusername" class="{{loginshow?'':'username'}}" wx:if="{{!islogin}}" open-type="getUserInfo">{{username}}</view>
+    <view bindtap="getusername" class="{{loginshow?'':'username'}}" wx:if="{{!islogin}}" >{{username}}</view>
 </view>
 <view class="photov">
     <image bindtap="photoopt" class="photoiconshow"
     src="https://royal-doctor-imgs-1256678596.cos.ap-beijing.myqcloud.com/index-photo-but.gif"></image>
-    <image bindtap="photologin" class="{{loginshow?'photousershow':'photouserhide'}}" wx:if="{{islogin}}"
-    src="/resources/photouserlogin.gif"></image>
+    <button bindtap="photologin" class="{{loginshow?'photousershow':'photouserhide'}}" wx:if="{{islogin}},{{canIUse}}"
+    src="/resources/photouserlogin.gif" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
 </view>
 <view class="wenanv1">请使用后置摄像头拍摄舌头正面照</view>
 <view class="wenanv2">请在无色光下使用</view>
