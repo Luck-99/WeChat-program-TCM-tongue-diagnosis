@@ -17,8 +17,8 @@
 .img_2 {
     z-index: 101;
     position: absolute;
-    width: 96vw;
-    height: 75vh;
+    width: 100%;
+    height: 80vh;
 }
 
 .img_11 {
@@ -29,7 +29,7 @@
     height: 75vh;
 }
 
-.img_3 {
+.img_takePhoto {
     width: 200rpx;
     height: 200rpx;
     z-index: 102;
@@ -38,13 +38,22 @@
     left: 37%;
 }
 
-.img_4 {
-    margin-left: 160rpx;
+.img_confirm {
+    width: 200rpx;
+    height: 200rpx;
+    z-index: 102;
     position: fixed;
-    bottom: 150rpx;
-    width: 430rpx;
-    height: 80rpx;
-    z-index: 104;
+    top: 81%;
+    left: 67%;
+}
+
+.img_rephoto{
+    width: 200rpx;
+    height: 200rpx;
+    z-index: 102;
+    position: fixed;
+    top: 81%;
+    left: 10%;
 }
 
 .text_1 {

@@ -6,16 +6,18 @@
     <view bindtap="getusername" class="{{loginshow?'':'username'}}" wx:if="{{!islogin}}" >{{username}}</view>
 </view>
 <view class="photov">
-    <image bindtap="photoopt" class="photoiconshow"
+    <image bindtap="photoopt" class="photoiconshow" 
     src="https://royal-doctor-imgs-1256678596.cos.ap-beijing.myqcloud.com/index-photo-but.gif"></image>
-    <button bindtap="photologin" class="{{loginshow?'photousershow':'photouserhide'}}" wx:if="{{islogin}},{{canIUse}}"
-    src="/resources/photouserlogin.gif" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+    <button bindtap="photologin" class="{{loginshow?'photologinshow':'photouserhide'}}" wx:if="{{canIUse}}"
+    open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" hover-class="none"></button>
+    <image class="{{loginshow?'photousershow':'photouserhide'}}" wx:if="{{islogin}}"
+    src="/resources/photouserlogin.gif"></image>
 </view>
 <view class="wenanv1">请使用后置摄像头拍摄舌头正面照</view>
 <view class="wenanv2">请在无色光下使用</view>
 <view class="wenanv3">详细注意事项请查看帮助</view>
 <view class="optv">
-    <view bindtap="gorecord" class="optvv">
+    <view bindtap="gorecord" class="optvv" >
         <image class="iconv" src="/resources/time.png"></image>
         <view class="optt">健康趋势</view>
     </view>

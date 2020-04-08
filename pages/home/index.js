@@ -12,19 +12,21 @@ Page({
         canIUse: wx.canIUse('button.open-type.getUserInfo')
     },
     onLoad: function(t) {
+      var s=this;
       wx.getSetting({
         success: function(res) {
           if (res.authSetting['scope.userInfo']){
             wx.getUserInfo({
               success: function(res) {
-                console(res.userInfo)
-              },
+                console.log(res.userInfo),
+                  s.setData({ loginshow: false, islogin:!1})
+              }
             })
           }
         },
         fail: function(res) {},
         complete: function(res) {},
-      })
+      });
     },
     bindGetUserInfo (e) {
       console.log(e.detail.userInfo)
@@ -121,8 +123,13 @@ Page({
     },
     photologin: function(){
       var t = this;
+      wx.showLoading({
+        title: "正在登录...",
+        mask: !0
+      }),
       wx.login({
         success: function(res) {
+          var code = res.code;
           wx.getUserInfo({
             success: function(res) {
               var simpleUser = res.userInfo;
@@ -130,7 +137,7 @@ Page({
               wx.request({
                 url: 'https://120.26.172.111/test.php',
                 data: {
-                  code: res.code,
+                  code: code,
                   username: simpleUser.nickName,
                   openid: simpleUser.openID
                 },
@@ -144,24 +151,23 @@ Page({
                 fail: function (res) { console.log("失败") },
                 complete: function (res) { },
               });
+              "" == getApp().globalData.openID ? getApp().GetWxOpenID().then(function (a) {
+                t.InitUserData();
+                }) : t.InitUserData();
+              t.setData({
+                loginshow: false
+              }); 
               
             },
             fail: function(res) {},
             complete: function(res) {},
           });
         },
-        fail: function(res) {},
+        fail: function (res) { },
         complete: function(res) {},
+        
       });
-      "" == getApp().globalData.openID ? getApp().GetWxOpenID().then(function (a) {
-        /*wx.showLoading({
-          title: 'NickName',
-          mask: !0
-        }),*/t.InitUserData();
-      }) : t.InitUserData();
-      this.setData({
-        loginshow: false
-      }); 
+      wx.hideLoading();
       
     },    
     InitUserData: function() {

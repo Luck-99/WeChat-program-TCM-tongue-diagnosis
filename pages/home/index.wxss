@@ -3,6 +3,15 @@ page {
     height: 100vh;
 }
 
+
+button::after{
+    border: none;
+}
+button{
+  background-color: #ffffff00;
+  opacity: 0;
+}
+
 .topimg {
     width: 100vw;
     height: 480rpx;
@@ -93,14 +102,25 @@ page {
     height: 360rpx;
     margin: 0 auto 0 auto;
     position: absolute;
+    z-index: 99;
     top: 226rpx;
     left: 195rpx;
     display: block;
 }
-.photouserhide{
+
+.photologinshow{
     width: 360rpx;
     height: 360rpx;
-    margin: 0 auto;
+    margin: 0 auto 0 auto;
+    position: absolute;
+    z-index: 100;
+    top: 226rpx;
+    left: 195rpx;
+    display: block;
+}
+
+
+.photouserhide{
     display: none;
 }
 

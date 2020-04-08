@@ -1,6 +1,6 @@
 <view class="page-body">
     <view class="page-body-wrapper">
-        <camera binderror="error" class="camera_1" devicePosition="{{qianhou}}" flash="torch">
+        <camera binderror="error" class="camera_1" devicePosition="{{qianhou}}" flash="auto">
             <cover-view class="back">
                 <cover-image mode="scaleToFill" src="/resources/mengban.png"></cover-image>
             </cover-view>
@@ -16,7 +16,7 @@
             <cover-view class="scunimg" style="display:{{display5}}">
                 <cover-image mode="scaleToFill" src="/resources/unface.png" style="width:339rpx"></cover-image>
             </cover-view>
-            <cover-image class="camera_prompt" src="/resources/photosuggestion.png"></cover-image>
+            <cover-image class="camera_prompt" src="/resources/photosuggestion.png" style="display:{{display2}}"></cover-image>
         </camera>
     </view>
     
@@ -26,14 +26,13 @@
             <image class="text_1_1" src="../../resources/myphoto.png"></image>
             <text class="text_1_2">相册</text>
         </view>
-        <view bindtap="cameradirection" class="zhuan">
+        <view bindtap="cameradirection" class="zhuan" style="display:{{display2}}">
             <image class="text_1_1" src="/resources/zhuanhuan.png"></image>
             <text class="text_1_2">翻转</text>
         </view>
-        <image bindtap="takePhoto" class="img_3" src="../../resources/takephoto.png" style="display:{{display2}}"></image>
-        <image bindtap="takePhoto_2" class="img_4" src="../../resources/confirm.png" style="display:{{display1}}"></image>
-        <view bindtap="view_3" class="text_2" style="display:{{display1}}">
-          <text class="text_2_1" style="color:#B53D18">重拍</text>
-        </view>
+        <image bindtap="takePhoto" class="img_takePhoto" src="../../resources/takephoto.png" style="display:{{display2}}"></image>
+        <image bindtap="takePhoto_confirm" class="img_confirm" src="../../resources/confirm.png" style="display:{{display1}}"></image>
+        <image bindtap="takePhoto_rephoto" class="img_rephoto" src="../../resources/rephoto.png" style="display:{{display1}}"></image>
+      
     </image>
 </view>
