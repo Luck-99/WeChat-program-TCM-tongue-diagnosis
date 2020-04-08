@@ -130,6 +130,7 @@ Page({
               wx.request({
                 url: 'https://120.26.172.111/test.php',
                 data: {
+                  code: res.code,
                   username: simpleUser.nickName,
                   openid: simpleUser.openID
                 },
