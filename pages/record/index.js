@@ -12,7 +12,7 @@ Page({
         });
     },
     goresult: function(t) {
-        console.log("获取到的时间：" + t.currentTarget.dataset.time), wx.setStorageSync("tjtime", t.currentTarget.dataset.time), 
+        console.log("获取到的时间：" + t.currentTarget.dataset.time), wx.setStorageSync("tjtime", t.currentTarget.dataset.time),
         wx.navigateTo({
             url: "../result/index?tizhi=" + t.currentTarget.dataset.tizhi
         });

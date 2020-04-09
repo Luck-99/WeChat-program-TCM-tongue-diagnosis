@@ -2,14 +2,12 @@ var t = getApp().globalData.requesturl;
 
 Page({
     data: {
-        iswxauth: !0,
-        ispoint: !0,
-        islogin: !0,
-        iscontact: !0,
-        username: '欢迎你',
+        checklogin:false,
+        islogin: false,
+        iscontact: false,
+        username: '',
         contents: "18500860320",
-        loginshow:true,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        loginshow:true
     },
     onLoad: function(t) {
       var s=this;
@@ -19,7 +17,8 @@ Page({
             wx.getUserInfo({
               success: function(res) {
                 console.log(res.userInfo),
-                  s.setData({ loginshow: false, islogin:!1})
+                s.setData({ loginshow: false, islogin: true, checklogin:false,
+                            username:res.userInfo.nickName+',欢迎你'})
               }
             })
           }
@@ -31,53 +30,13 @@ Page({
     bindGetUserInfo (e) {
       console.log(e.detail.userInfo)
     },
-    /*getUserInfo: function(t) {
-        var a = this;
-        console.log("授权信息:", t), "getUserInfo:ok" == t.detail.errMsg ? (a.SaveWxUser(t.detail.userInfo), 
-        getApp().globalData.userInfo = t.detail.userInfo, a.setData({
-            islogin: !1,
-            iswxauth: !0,
-            success:function(a){ }
-        })) : (console.log("拒绝授权信息！"), a.setData({
-            iswxauth: !1
-        }));
-    },*/
-    SaveWxUser: function(a) {
-        var o = this;
-        wx.request({
-            url: t + "/insertinfo",
-            data: {
-                openid: getApp().globalData.openID,
-                nickname: a.nickName,
-                avatarurl: a.avatarUrl,
-                gender: a.gender
-            },
-            header: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            method: "GET",
-            success: function(t) {
-                console.log("保存用户信息："), console.log(t), getApp().globalData.userInfo = {
-                    avatarurl: a.avatarUrl,
-                    nickname: a.nickName
-                }, o.setData({
-                    iswxauth: !0
-                });
-            },
-            fail: function(t) {
-                console.log("保存用户信息失败：", t), o.setData({
-                    iswxauth: !1
-                });
-            }
-        });
-    },
     photoopt: function() {
         var t = this;
-        "" != getApp().globalData.openID ? wx.navigateTo({
+        if (t.data.islogin) {
+        wx.navigateTo({
             url: "../takephoto/takephoto"
-        }) : t.setData({
-            ispoint: !1
-        });
+        })}
+        else t.setData({checklogin:true})
     },
     gohelp: function() {
         wx.navigateTo({
@@ -85,17 +44,12 @@ Page({
         });
     },
     gorecord: function() {
-        var t = this;
-        "" != getApp().globalData.openID ? wx.navigateTo({
+      var t = this;
+      if (t.data.islogin) {
+      wx.navigateTo({
             url: "../record/index"
-        }) : t.setData({
-            ispoint: !1
-        });
-    },
-    goshop: function() {
-        wx.navigateToMiniProgram({
-            appId: "wx58eaf59174f7aa9d"
-        });
+        })}
+      else t.setData({ checklogin: true });
     },
     onReady: function() {},
     onShow: function() {},
@@ -105,41 +59,26 @@ Page({
     onReachBottom: function() {},
     onShareAppMessage: function() {},
     pointyes: function() {
-        this.setData({
-            ispoint: !0
-        });
-    },
-    userlogin: function() {
-      var t = this;
-      "" == getApp().globalData.openID ? getApp().GetWxOpenID().then(function (a) {
-        wx.showLoading({
-          title: "正在登录...",
-          mask: !0
-        }), t.InitUserData();
-      }) : t.InitUserData();
-      this.setData({
-        loginshow: (!this.data.loginshow),
-      }); 
+      this.setData({ checklogin: false });
     },
     photologin: function(){
       var t = this;
-      wx.showLoading({
-        title: "正在登录...",
-        mask: !0
-      }),
       wx.login({
         success: function(res) {
-          var code = res.code;
+          var codes = res.code;
           wx.getUserInfo({
             success: function(res) {
               var simpleUser = res.userInfo;
               console.log(simpleUser.nickName);
+              t.setData({
+                loginshow: false, islogin: true, checklogin: false
+              });
               wx.request({
                 url: 'https://120.26.172.111/test.php',
                 data: {
-                  code: code,
+                  code: codes,
                   username: simpleUser.nickName,
-                  openid: simpleUser.openID
+                  //openid: simpleUser.openid
                 },
                 header: {
                   'content-type': 'application/json'
@@ -150,14 +89,7 @@ Page({
                 success: function (res) { console.log(res.data) },
                 fail: function (res) { console.log("失败") },
                 complete: function (res) { },
-              });
-              "" == getApp().globalData.openID ? getApp().GetWxOpenID().then(function (a) {
-                t.InitUserData();
-                }) : t.InitUserData();
-              t.setData({
-                loginshow: false
-              }); 
-              
+              })
             },
             fail: function(res) {},
             complete: function(res) {},
@@ -165,56 +97,11 @@ Page({
         },
         fail: function (res) { },
         complete: function(res) {},
-        
       });
-      wx.hideLoading();
-      
     },    
-    InitUserData: function() {
-        var a = this;
-        wx.request({
-            url: t + "/selectinfo",
-            data: {
-                openid: getApp().globalData.openID
-            },
-            header: {
-                "Content-Type": "application/json"
-            },
-            method: "GET",
-            success: function(t) {
-                console.log("获取用户记录数据：", t), "22" != t.data.code ? (getApp().globalData.userInfo = {
-                    avatarurl: t.data.avatarurl,
-                    nickname: t.data.nickname
-                }, a.setData({
-                    iswxauth: !0,
-                    islogin: !1
-                })) : a.setData({
-                    iswxauth: !1
-                });
-            },
-           complete: function() {
-                setTimeout(function() {
-                    wx.hideLoading();
-                }, 500);
-            }
-        });
-    },
-    logout: function() {
-        this.setData({
-            islogin: !0
-        }), getApp().globalData.openID = "";
-      this.setData({
-        loginshow: (!this.data.loginshow)
-      }); 
-    },
-    Deauthorization: function() {
-        this.setData({
-            iswxauth: !0
-        });
-    },
     gocontact: function() {
         this.setData({
-            iscontact: !1
+            iscontact: true
         });
     },
     copyText: function(t) {
@@ -232,8 +119,6 @@ Page({
         });
     },
     contact2: function() {
-        this.setData({
-            iscontact: !0
-        });
+      this.setData({ iscontact: false });
     }    
 });

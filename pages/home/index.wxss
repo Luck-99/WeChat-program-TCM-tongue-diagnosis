@@ -12,6 +12,10 @@ button{
   opacity: 0;
 }
 
+.hide{
+    display: none;
+}
+
 .topimg {
     width: 100vw;
     height: 480rpx;
@@ -20,18 +24,28 @@ button{
 }
 
 .tipv {
-    margin: -460rpx auto 0 32rpx;
+    margin: -460rpx 0rpx 0rpx 32rpx;
+    width: 100vw;
     display: flex;
     color: #6d542b;
     line-height: 60rpx;
+    flex-flow:row;
 }
-
 .companyv {
     font-size: 32rpx;
 }
-
 .typev {
     font-size: 28rpx;
+}
+.username {
+    width: auto;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    color: #9F7B4B;
+    margin-top: 3px;
+    margin-left: 150rpx;
+    margin-right: 30rpx;
 }
 
 .login {
@@ -51,33 +65,6 @@ button{
     display: none;
 }
 
-.logout {
-    width: 100rpx;
-    height: 50rpx;
-    opacity: 1;
-    border-radius: 44px;
-    text-align: center;
-    line-height: 50rpx;
-    font-size: 24rpx;
-    color: #9F7B4B;
-    right: 20rpx;
-    margin-top: 3px;
-    margin-left: 270rpx;
-}
-.username {
-    width: 100rpx;
-    height: 50rpx;
-    opacity: 1;
-    border-radius: 44px;
-    text-align: center;
-    line-height: 50rpx;
-    font-size: 24rpx;
-    color: #9F7B4B;
-    right: 20rpx;
-    margin-top: 3px;
-    margin-left: 270rpx;
-
-}
 
 .photov {
     width: 100vw;
@@ -90,12 +77,7 @@ button{
     margin: 0 auto;
     display: block;
 }
-.photoiconhide {
-    width: 360rpx;
-    height: 360rpx;
-    margin: 0 auto;
-    display: none;
-}
+
 
 .photousershow {
     width: 360rpx;
@@ -103,8 +85,8 @@ button{
     margin: 0 auto 0 auto;
     position: absolute;
     z-index: 99;
-    top: 226rpx;
-    left: 195rpx;
+    top: 225rpx;
+    left: 196rpx;
     display: block;
 }
 
@@ -119,10 +101,6 @@ button{
     display: block;
 }
 
-
-.photouserhide{
-    display: none;
-}
 
 .wenanv1 {
     font-size: 32rpx;
@@ -245,12 +223,6 @@ button{
     margin: 76rpx 0;
 }
 
-.avatar {
-    width: 260rpx;
-    height: 260rpx;
-    display: block;
-    margin: 0 auto;
-}
 
 .authtip {
     width: 100%;

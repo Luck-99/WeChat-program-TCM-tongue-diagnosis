@@ -2,15 +2,14 @@
 <view class="tipv">
     <view class="companyv">贝叶斯科技丨</view>
     <view class="typev">AI舌象分析</view>
-    <view bindtap="username" class="login" wx:if="{{islogin}}">{{username}}</view>
-    <view bindtap="getusername" class="{{loginshow?'':'username'}}" wx:if="{{!islogin}}" >{{username}}</view>
+    <view class="{{loginshow?'':'username'}}" wx:if="{{islogin}}" >{{username}}</view>
 </view>
 <view class="photov">
     <image bindtap="photoopt" class="photoiconshow" 
     src="https://royal-doctor-imgs-1256678596.cos.ap-beijing.myqcloud.com/index-photo-but.gif"></image>
-    <button bindtap="photologin" class="{{loginshow?'photologinshow':'photouserhide'}}" wx:if="{{canIUse}}"
+    <button bindtap="photologin" class="{{loginshow?'photologinshow':'hide'}}" wx:if="{{!islogin}}"
     open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" hover-class="none"></button>
-    <image class="{{loginshow?'photousershow':'photouserhide'}}" wx:if="{{islogin}}"
+    <image class="{{loginshow?'photousershow':'hide'}}" wx:if="{{!islogin}}"
     src="/resources/photouserlogin.gif"></image>
 </view>
 <view class="wenanv1">请使用后置摄像头拍摄舌头正面照</view>
@@ -34,23 +33,12 @@
         <view class="optt">建议反馈</view>
     </view>
 </view>
-<view catchtouchmove="nomoveopt" class="service_boxs mask" wx:if="{{!iswxauth}}">
-    <view class="show_qiaodao_jifen">
-        <view class="contentxt">
-            <image class="avatar" src="/resources/avatar.png"></image>
-        </view>
-        <view class="authtip">欢迎使用贝叶斯AI智能舌诊系统</view>
-        <button bindtap="Deauthorization" class="btnv">取消授权</button>
-        <button bindgetuserinfo="getUserInfo" class="btnv" lang="zh_CN" openType="getUserInfo">微信授权
-    </button>
-    </view>
-</view>
-<view class="point" wx:if="{{!ispoint}}">
+<view class="point" wx:if="{{checklogin}}">
     <view bindtap="pointyes" class="point2">
         <image class="point_img" src="/resources/login_point.png"></image>
     </view>
 </view>
-<view bindtap="contact2" catchtouchmove="nomoveopt" class="service_boxs mask" wx:if="{{!iscontact}}">
+<view bindtap="contact2" catchtouchmove="nomoveopt" class="service_boxs mask" wx:if="{{iscontact}}">
     <view class="show_qiaodao_jifen">
         <view class="authtip2">建议反馈</view>
         <view class="authtip3">武先生：{{contents}}</view>
