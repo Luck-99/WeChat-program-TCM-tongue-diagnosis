@@ -73,14 +73,14 @@ Page({
         
 
 
-      /*for (var t = this, a = t.data.restype, e = [], o = 0; o < a.length; o++) e = e.concat(a[o].split("+"));
+      for (var t = this, a = t.data.restype, e = [], o = 0; o < a.length; o++) e = e.concat(a[o].split("+"));
         console.log(e);
       for (var n = [], o = 0; o < e.length; o++) "" != e[o] && (n = n.concat(e[o]));
       for (var i = [], o = 0; o < n.length; o++) "" != n[o] && (i = i.concat(n[o]));
       if (console.log(i), n.length > 0) {
             for (var c = "", o = 0; o < n.length; o++) c = c + "+" + n[o];
             t.InsertData(c);
-      }*/
+      }
       confirm.setData({ display3: "block" }), wx.hideLoading(),
         setTimeout(function () {
           console.log("执行了定时器"), confirm.setData({
@@ -155,7 +155,7 @@ Page({
         });
     },
     UploadImgOpt: function(t) {
-       /* var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://tonguepicture-1256678596.cos.ap-beijing.myqcloud.com/";
+        var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://tonguepicture-1256678596.cos.ap-beijing.myqcloud.com/";
         wx.uploadFile({
             url: o,
             name: "file",
@@ -169,7 +169,7 @@ Page({
                 var n = o + e;
                 console.log(n), a.Discern(n);
             }
-        });*/
+        });
     },
     cameradirection: function() {
         "front" == this.data.qianhou ? (this.setData({
@@ -198,7 +198,7 @@ Page({
             },
             method: "GET",
             success: function(a) {
-                if (console.log("识别的结果："), console.log(a), console.log(a.data.code), 22 == a.data.code) {//这里是88
+                if (console.log("识别的结果："), console.log(a), console.log(a.data.code), 88 == a.data.code) {//这里是88
                     var n;
                     o.setData((n = {}, t(n, "restype[0]", a.data.tizhi), t(n, "imgsrc", e), t(n, "display1", "block"), 
                     t(n, "display2", "none"),  t(n, "user_cuttongue", a.data.cutTongue), 
@@ -206,7 +206,7 @@ Page({
                     t(n, "cha4", a.data.cha4), t(n, "cha5", a.data.cha5), t(n, "cha6", a.data.cha6), 
                     t(n, "cha7", a.data.cha7), t(n, "cha8", a.data.cha8), t(n, "cha9", a.data.cha9), 
                     t(n, "cha10", a.data.cha10), n))
-                } else 88 == a.data.code ? (wx.hideLoading(), o.setData({  //这里原来是22
+                } else 22 == a.data.code ? (wx.hideLoading(), o.setData({  //这里原来是22
                     display4: "block"
                 }), setTimeout(function() {
                     console.log("执行了定时器"), o.setData({
