@@ -43,7 +43,7 @@ Page({
     },
     onReady: function() {},
     onShow: function() {
-        this.GetUserLocation();
+        //this.GetUserLocation();
     },
     onHide: function() {},
     onUnload: function() {},
@@ -70,9 +70,6 @@ Page({
         title: "图片正在上传..",
         mask: !0
       });
-        
-
-
       for (var t = this, a = t.data.restype, e = [], o = 0; o < a.length; o++) e = e.concat(a[o].split("+"));
         console.log(e);
       for (var n = [], o = 0; o < e.length; o++) "" != e[o] && (n = n.concat(e[o]));
@@ -87,7 +84,6 @@ Page({
             display3: "none"
           });
         }, 2e3);
-
       wx.navigateTo({
         url: "../guodu/index"
       })
@@ -155,7 +151,7 @@ Page({
         });
     },
     UploadImgOpt: function(t) {
-        var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://tonguepicture-1256678596.cos.ap-beijing.myqcloud.com/";
+        var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://tonguepicture-1256678596.cos.ap-beijing.myqcloud.com/"; 
         wx.uploadFile({
             url: o,
             name: "file",
@@ -178,13 +174,13 @@ Page({
             qianhou: "front"
         }), console.log(this.data.qianhou));
     },
-    GetUserLocation: function() {
+    /*GetUserLocation: function() {
         var t = this;
         0 == getApp().globalData.latitude && 0 == getApp().globalData.longitude ? t.getUserLocation() : t.setData({
             latitude: getApp().globalData.latitude,
             longitude: getApp().globalData.longitude
         });
-    },
+    },*/
     Discern: function(e) {
         var o = this;
         wx.request({
@@ -233,7 +229,7 @@ Page({
             }
         });
     },
-    getUserLocation: function() {
+    /*getUserLocation: function() {
         var t = this;
         wx.getSetting({
             success: function(a) {
@@ -275,5 +271,5 @@ Page({
                 });
             }
         });
-    }
+    }*/
 });

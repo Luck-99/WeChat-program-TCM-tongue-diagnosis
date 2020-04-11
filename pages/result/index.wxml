@@ -119,16 +119,3 @@
         </view>
     </view>
 </view>
-<image bindtap="shareopt" class="shareimg" mode="widthFix" src="/resources/call.png"></image>
-<image bindtap="tiaofeed" class="feed" src="/resources/feedimg.gif"></image>
-<view bindtap="hidewindow" catchtouchmove="nomoveopt" class="service_boxs mask" wx:if="{{showwindow}}">
-    <view class="show_qiaodao_jifen">
-        <view class="contentxt">
-            <canvas canvasId="myCanvas" class="canvascss"></canvas>
-        </view>
-        <view class="btnv">
-            <image class="downpng" src="/resources/xiazai.png"></image>
-            <view bindtap="saveopt" class="btnokv">点击保存图片</view>
-        </view>
-    </view>
-</view>

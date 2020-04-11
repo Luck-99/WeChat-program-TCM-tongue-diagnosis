@@ -70,6 +70,7 @@ Page({
             success: function(res) {
               var simpleUser = res.userInfo;
               console.log(simpleUser.nickName);
+              getApp().globalData.userInfo=res.userInfo
               t.setData({
                 loginshow: false, islogin: true, checklogin: false
               });
