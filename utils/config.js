@@ -1,5 +1,5 @@
 var e = {
-    uploadImageUrl: "https://bys-tonguepicture.oss-cn-beijing.aliyuncs.com/",
+    uploadImageUrl: "https://www.laizhibin.top/test/upload_photo.php",
     AccessKeySecret: "xUYKYbJpBT4JlPSGqZKGtJqqvN6LrH",
     OSSAccessKeyId: "LTAI91HMCdznHW81",
     timeout: 87600

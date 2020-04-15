@@ -74,7 +74,7 @@ Page({
                 loginshow: false, islogin: true, checklogin: false
               });
               wx.request({
-                url: 'https://120.26.172.111/test.php',
+                url: 'https://120.26.172.111/test/test.php',
                 data: {
                   code: codes,
                   username: simpleUser.nickName,
