@@ -148,7 +148,7 @@ function coreMD5(x)
  */  
 function binl2hex(binarray)  
 {  
- var hex_tab = "0123456789abcdef"  
+ var hex_tab = "0123456789ABCDEF"  
  var str = ""  
  for(var i = 0; i < binarray.length * 4; i++)  
  {  

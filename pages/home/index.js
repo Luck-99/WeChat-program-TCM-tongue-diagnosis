@@ -1,6 +1,5 @@
 var t = getApp().globalData.requesturl;
 var utilMd5 = require('../../utils/md5.js'); 
-var util = require('../../utils/util.js');
 
 Page({
     data: {
@@ -48,21 +47,19 @@ Page({
         });
     },
     sharefriends:function(){
-      this.setData({time:util.formatTime(new Date)});
       var restime= new Date().toJSON().substring(0, 10).replace(/-/g,'') + new Date().toTimeString().substring(0,8).replace(/:/g,'');
-      console.log(restime)
       wx.request({
         url: "http://www.bayescience.com/api/analysis",
         data:{
-          timestamp:"200423101525",
+          timestamp:restime,
           app_id:"401518a5f65041cc", //6f05e4a27efa461a
           version:"1.0",
-          sign:utilMd5.hexMD5(utilMd5.hexMD5(String(200423101525))+'f72486593c724adab6adef620711231f'), //9bba16489ba84573bb8987f3de0692cc
+          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'f72486593c724adab6adef620711231f'), //9bba16489ba84573bb8987f3de0692cc
           method: "tongueAnalysis",
           imgpath:"https://laizhibin.top/1.jpg"
         },
         header: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/x-www-form-urlencoded"
       },
         method: "POST",
         success: function(a) {
@@ -99,7 +96,7 @@ Page({
               duration: 1500
           });
       }
-      })
+      });
     },
     gorecord: function() {
       var t = this;
