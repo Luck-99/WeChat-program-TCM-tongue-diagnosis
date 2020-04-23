@@ -37,7 +37,7 @@ App({
         userInfo: null,
         openID: "",
         loginrequesturl: "https://machineeye.cn",
-        requesturl: "https://machineeye.cn:3367",
+        requesturl: "https://machineeye.cn:3367",  //发送数据到服务器
         imgurl: "https://royal-doctor-imgs-1256678596.cos.ap-beijing.myqcloud.com/",
         latitude: 0,
         longitude: 0,

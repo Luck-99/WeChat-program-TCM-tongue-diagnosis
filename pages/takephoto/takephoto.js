@@ -43,7 +43,7 @@ Page({
     },
     onReady: function() {},
     onShow: function() {
-        //this.GetUserLocation();
+        this.GetUserLocation();
     },
     onHide: function() {},
     onUnload: function() {},
@@ -56,20 +56,26 @@ Page({
             quality: "high",
             success: function(a) {
                 var n = o.formatTime(new Date());
+                wx.showLoading({
+                    title: "图片正在上传..",
+                    mask: !0
+                  });
                 e(a.tempImagePath, "yuyi/" + n + "/", function(a) {
                     console.log("======上传成功图片地址为：", a), t.Discern(a);
                 }, function(t) {
                     console.log("======上传失败======", t);
                 });
+                confirm.setData({ display3: "block" }), wx.hideLoading(),
+        setTimeout(function () {
+          console.log("执行了定时器"), confirm.setData({
+            display3: "none"
+          });
+        }, 2e3);
             }
         });
     },
     takePhoto_confirm: function() {
       var confirm = this;
-      wx.showLoading({
-        title: "图片正在上传..",
-        mask: !0
-      });
       for (var t = this, a = t.data.restype, e = [], o = 0; o < a.length; o++) e = e.concat(a[o].split("+"));
         console.log(e);
       for (var n = [], o = 0; o < e.length; o++) "" != e[o] && (n = n.concat(e[o]));
@@ -78,17 +84,12 @@ Page({
             for (var c = "", o = 0; o < n.length; o++) c = c + "+" + n[o];
             t.InsertData(c);
       }
-      confirm.setData({ display3: "block" }), wx.hideLoading(),
-        setTimeout(function () {
-          console.log("执行了定时器"), confirm.setData({
-            display3: "none"
-          });
-        }, 2e3);
+      
       wx.navigateTo({
         url: "../guodu/index"
       })
     },
-    InsertData: function(t) {
+    InsertData: function(t) {  //发数据到服务器
         var e = this;
         wx.request({
             url: a + "/obtainres2",
@@ -127,7 +128,7 @@ Page({
             }
         });
     },
-    view_2: function() {
+    view_2: function() {  //后置拍照
         var t = this;
         wx.chooseImage({
             count: 1,
@@ -143,15 +144,15 @@ Page({
             }
         });
     },
-    takePhoto_rephoto: function() {
+    takePhoto_rephoto: function() {  //是否重拍
         this.setData({
             display1: "none"
         }), this.setData({
             display2: "block"
         });
     },
-    UploadImgOpt: function(t) {
-        var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://tonguepicture-1256678596.cos.ap-beijing.myqcloud.com/"; 
+    UploadImgOpt: function(t) {  //上传图片到服务器
+        var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://120.26.172.111/test/upload_photo.php"; 
         wx.uploadFile({
             url: o,
             name: "file",
@@ -174,14 +175,14 @@ Page({
             qianhou: "front"
         }), console.log(this.data.qianhou));
     },
-    /*GetUserLocation: function() {
+    GetUserLocation: function() {
         var t = this;
         0 == getApp().globalData.latitude && 0 == getApp().globalData.longitude ? t.getUserLocation() : t.setData({
             latitude: getApp().globalData.latitude,
             longitude: getApp().globalData.longitude
         });
-    },*/
-    Discern: function(e) {
+    },
+    Discern: function(e) {  //发送到服务器调用API
         var o = this;
         wx.request({
             url: a + "/testtongue2",
@@ -194,7 +195,7 @@ Page({
             },
             method: "GET",
             success: function(a) {
-                if (console.log("识别的结果："), console.log(a), console.log(a.data.code), 88 == a.data.code) {//这里是88
+                if (console.log("识别的结果："), console.log(a), console.log(a.data.code), 88 == a.data.code) {
                     var n;
                     o.setData((n = {}, t(n, "restype[0]", a.data.tizhi), t(n, "imgsrc", e), t(n, "display1", "block"), 
                     t(n, "display2", "none"),  t(n, "user_cuttongue", a.data.cutTongue), 
@@ -202,7 +203,7 @@ Page({
                     t(n, "cha4", a.data.cha4), t(n, "cha5", a.data.cha5), t(n, "cha6", a.data.cha6), 
                     t(n, "cha7", a.data.cha7), t(n, "cha8", a.data.cha8), t(n, "cha9", a.data.cha9), 
                     t(n, "cha10", a.data.cha10), n))
-                } else 22 == a.data.code ? (wx.hideLoading(), o.setData({  //这里原来是22
+                } else 22 == a.data.code ? (wx.hideLoading(), o.setData({  
                     display4: "block"
                 }), setTimeout(function() {
                     console.log("执行了定时器"), o.setData({
@@ -229,7 +230,7 @@ Page({
             }
         });
     },
-    /*getUserLocation: function() {
+    getUserLocation: function() {
         var t = this;
         wx.getSetting({
             success: function(a) {
@@ -271,5 +272,5 @@ Page({
                 });
             }
         });
-    }*/
+    }
 });
