@@ -66,25 +66,26 @@ Page({
     },
     sharefriends:function(){
       var o = this;
+      var e= this;
       var restime= new Date().toJSON().substring(0, 10).replace(/-/g,'') + new Date().toTimeString().substring(0,8).replace(/:/g,'');
       wx.request({
         url: "http://www.bayescience.com/api/analysis",
         data:{
           timestamp:restime,
-          app_id:"401518a5f65041cc", //6f05e4a27efa461a
+          app_id:"LTAI91HMCdznHW81", //6f05e4a27efa461a
           version:"1.0",
-          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'f72486593c724adab6adef620711231f'), //9bba16489ba84573bb8987f3de0692cc
+          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'xUYKYbJpBT4JlPSGqZKGtJqqvN6LrH'), //9bba16489ba84573bb8987f3de0692cc
           method: "tongueAnalysis",
-          imgpath:"https://laizhibin.top/1.jpg"
+          imgpath:"https://www.shezhen.top/1.jpg"
         },
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
       },
         method: "POST",
         success: function(a) {
-          /*console.log(a);
-          console.log(a.data);*/
-          if (console.log("识别的结果："), console.log(a), console.log(a.data.code), 88 == a.data.code) {
+          console.log(a.data);
+          //console.log(JSON.stringify(a.data.msg));
+          /*if (console.log("识别的结果："), console.log(a), console.log(a.data.code), 88 == a.data.code) {
               var n;
               o.setData((n = {}, t(n, "restype[0]", a.data.tizhi), t(n, "imgsrc", e), 
               t(n, "display2", "none"),  t(n, "user_cuttongue", a.data.cutTongue), 
@@ -92,24 +93,8 @@ Page({
               t(n, "cha4", a.data.cha4), t(n, "cha5", a.data.cha5), t(n, "cha6", a.data.cha6), 
               t(n, "cha7", a.data.cha7), t(n, "cha8", a.data.cha8), t(n, "cha9", a.data.cha9), 
               t(n, "cha10", a.data.cha10), n))
-          } else 22 == a.data.code ? (wx.hideLoading(), o.setData({  
-              display4: "block"
-          }), setTimeout(function() {
-              console.log("执行了定时器"), o.setData({
-                  display4: "none"
-              });
-          }, 2e3)) : 33 == a.data.code ? (wx.hideLoading(), o.setData({
-              display5: "block"
-          }), setTimeout(function() {
-              o.setData({
-                  display5: "none"
-              });
-          }, 2e3)) : wx.showToast({
-              title: "请求超时",
-              icon: "success",
-              duration: 1500
-          });
-      },
+          }*/
+     /* },
       fail: function(t) {
           wx.hideLoading(), wx.showToast({
               title: "请求超时",
@@ -117,37 +102,39 @@ Page({
           });
       }
       });
-      //console.log(this.data.cha1);
+      //console.log(JSON.parse(this.data));
       wx.request({
-        url: 'https://120.26.172.111/test/Receive_data.php',
+        url: 'https://www.shezhen.top/test/Receive_data.php',
         data: {
-          /*openid: getApp().globalData.openID,
-          latitude: e.data.latitude,
-          longitude: e.data.longitude,
-          result: t,*/
-          user_cuttongue: this.data.user_cuttongue,
-          user_cha1: this.data.cha1,
-          user_cha2: this.data.cha2,
-          user_cha3: this.data.cha3,
-          user_cha4: this.data.cha4,
-          user_cha5: this.data.cha5,
-          user_cha6: this.data.cha6,
-          user_cha7: this.data.cha7,
-          user_cha8: this.data.cha8,
-          user_cha9: this.data.cha9,
-          user_cha10: this.data.cha10
+          openid: "getApp().globalData.openID",
+          latitude: "e.data.latitude",
+          longitude: "e.data.longitude",
+          result: "平和型体质",
+          user_5:"afwa",
+          user_cuttongue: "e.data.user_cuttongue",
+          user_cha1: "456",
+          user_cha2: e.data.cha2,
+          user_cha3: "e.data.cha3",
+          user_cha4: "e.data.cha4",
+          user_cha5: "e.data.cha5",
+          user_cha6: "e.data.cha6",
+          user_cha7: "e.data.cha7",
+          user_cha8:" e.data.cha8",
+          user_cha9: "e.data.cha9",
+          user_cha10: "e.data.cha10"
       },
       header: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "GET",
       success: function(a) {
-          console.log("插入数据的结果："), console.log(a), "unsuccess" != a.data && wx.setStorageSync("tjtime", a.data), 
-          wx.redirectTo({
-              url: "../result/index?tizhi=" + t
-          });
+          //console.log("插入数据的结果："), console.log(a), "unsuccess" != a.data && wx.setStorageSync("tjtime", a.data), 
+          /*wx.redirectTo({
+              url: "../result/index?tizhi=" + "平和型体质"
+          });*/
       }
       });
+      //console.log(this.data.cha1)
     },
     gorecord: function() {
       var t = this;
@@ -181,11 +168,10 @@ Page({
                 loginshow: false, islogin: true, checklogin: false
               });
               wx.request({
-                url: 'https://120.26.172.111/test/test.php',
+                url: 'https://www.shezhen.top/test/test.php',
                 data: {
                   code: codes,
-                  username: simpleUser.nickName,
-                  //openid: simpleUser.openid
+                  username: simpleUser.nickName
                 },
                 header: {
                   'content-type': 'application/json'

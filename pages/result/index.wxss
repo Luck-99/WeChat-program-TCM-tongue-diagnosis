@@ -1,8 +1,15 @@
 page {
-    background: #ebdfd4;
-}
-
-.userinfov {
+    background: #FCF7F8;
+  }
+  
+  .resultback{
+    width: 100%;
+    height: 480rpx;
+    position: relative;
+    z-index: -1;
+  }
+  
+  .history {
     width: 100vw;
     height: 200rpx;
     display: flex;
@@ -10,297 +17,124 @@ page {
     top: 0;
     left: 0;
     z-index: 2;
-}
-
-.duodan {
-    width: 722rpx;
-    line-height: 78rpx;
-    height: 156rpx;
-    background: rgba(203,177,142,1);
-    box-shadow: 0px 6rpx 16rpx rgba(203,177,142,0.48);
-    opacity: 1;
-    border-radius: 78rpx;
-    text-align: center;
-    margin-left: 14rpx;
-}
-
-.fuhexing {
-    font-size: 46rpx;
-    color: rgba(255,255,255,1);
-}
-
-.jibenxx {
-    margin-top: 32rpx;
-}
-
-.userinfo-avatar {
+  }
+  
+  .historypic {
     overflow: hidden;
     display: block;
-    width: 96rpx;
-    height: 96rpx;
-    margin: 58rpx 24rpx 0 64rpx;
-    border-radius: 50%;
-}
-
-.userNickName {
+    width: 48rpx;
+    height: 48rpx;
+    margin: -60% 0rpx 0rpx 20rpx;
+  
+  }
+  
+  .historyname {
     display: flex;
-    padding-top: 86rpx;
-    font-size: 40rpx;
-    color: #707070;
-}
-
-.typeimg {
-    width: 100vw;
-    margin-top: 32rpx;
-}
-
-.categoryv {
-    margin-top: 40rpx;
+    font-size: 30rpx;
+    margin-left: 15rpx;
+    color: #7dc5eb;
+    margin-top: -60%;
+  }
+  
+  
+  .duodan {
+    opacity: 1;
     text-align: center;
-}
-
-.categoryicon {
-    width: 592rpx;
-    height: 96rpx;
-}
-
-.categoryitemicon {
-    width: 200rpx;
-    height: 72rpx;
-    margin: 40rpx 40rpx 16rpx 40rpx;
-}
-
-.describet {
+    margin:-75% 0 5% 0%;
+  }
+  
+  .fuhexing {
+    font-size: 46rpx;
+    color: #000000a1;
+  }
+  
+  .jibenxx {
+    margin-top: 320rpx;
+  }
+  
+  
+  .describet {
     font-size: 28rpx;
     color: #333;
     margin: 25rpx 40rpx;
-}
-
-.recommendgoodsv {
-    width: 100vw;
-    margin-top: 40rpx;
-    text-align: center;
-}
-
-.kuangimg {
-    width: 664rpx;
-    height: 356rpx;
-    display: block;
-    margin: 0 auto;
-}
-
-.goodsv {
-    width: 664rpx;
-    height: 356rpx;
-    display: flex;
-    position: relative;
-    margin-top: -356rpx;
-}
-
-.goodsimg {
-    width: 180rpx;
-    height: 290rpx;
-    margin-top: 38rpx;
-    margin-left: 88rpx;
-    margin-right: 64rpx;
-}
-
-.tipv {
-    width: 300rpx;
-    color: #7d4a11;
-    font-size: 24rpx;
-    text-align: left;
-    margin-top: 52rpx;
-}
-
-.goodsname {
-    font-size: 36rpx;
-    color: #7d4a11;
-    width: 300rpx;
-    margin-top: 32rpx;
-    margin-left: -20rpx;
-}
-
-.pricev {
-    display: flex;
-    margin-top: 16rpx;
-}
-
-.pricetip {
-    color: #e59900;
-    font-size: 24rpx;
-}
-
-.buyprice {
-    display: flex;
-    margin-left: 16rpx;
-    font-size: 30rpx;
-    color: #7d4a11;
-    line-height: 40rpx;
-    margin-top: -5rpx;
-}
-
-.numt {
-    font-size: 32rpx;
-    line-height: 1;
-    margin-left: 5rpx;
-    margin-top: 5rpx;
-}
-
-.originprice {
-    margin-left: 16rpx;
-    font-size: 24rpx;
-    color: #777;
-    text-decoration: line-through;
-}
-
-.buyv {
-    display: flex;
-    font-size: 24rpx;
-    color: #5c94de;
-    line-height: 40rpx;
-}
-
-.handicon {
-    width: 40rpx;
-    height: 40rpx;
-    margin-top: 24rpx;
-}
-
-.buytxt {
-    margin-top: 24rpx;
-    font-size: 30rpx;
-    width: 100rpx;
-    text-align: center;
-}
-
-.shareimg {
-    width: 100vw;
-    margin-top: 12rpx;
-}
-
-.service_boxs {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 999;
-}
-
-.mask {
-    background-color: rgba(0,0,0,0.3);
-}
-
-.show_qiaodao_jifen {
-    width: 570rpx;
-    height: auto;
-    position: absolute;
-    top: 10vh;
-    left: 90rpx;
-    background-color: #fff;
-    border-radius: 20rpx;
-}
-
-.contentxt {
-    width: 180px;
-    height: 320px;
-    border: 1rpx solid #000;
-    margin: 36rpx auto;
-}
-
-.canvascss {
-    width: 180px;
-    height: 320px;
-    display: block;
-}
-
-.btnv {
-    display: flex;
-    justify-content: center;
-    background-color: #7d4a11;
-    border-radius: 10rpx;
-    margin: 32rpx 40rpx 28rpx 40rpx;
-}
-
-.downpng {
-    width: 48rpx;
-    height: 48rpx;
-    margin-right: 18rpx;
-    margin-top: 16rpx;
-}
-
-.btnokv {
-    height: 80rpx;
-    text-align: center;
-    line-height: 80rpx;
-    box-sizing: content-box;
-    color: #fff;
-    font-size: 32rpx;
-}
-
-.feed {
-    text-align: center;
-    color: #989898;
-    font-size: 30rpx;
-    margin-bottom: 40rpx;
-    margin-top: 14rpx;
-    margin-left: 175rpx;
-    text-decoration: underline;
-    height: 40rpx;
-    width: 400rpx;
-}
-
-.biaoti2 {
-    border-left: 8rpx solid #D9A272;
-    color: #AA6A32;
+  }
+  
+  .biaoti {
+    border-left: 6rpx solid #D9A272;
+    color: #4F8CCE;
     font-size: 30rpx;
     margin-left: 34rpx;
-}
-
-.text2 {
+  }
+  
+  .text {
     margin-left: 10rpx;
-}
-
-#panel {
+  }
+  
+  #panel {
     height: 8vh;
-    background: #D9A272;
+    background: #00000000;
     width: 62vw;
     float: left;
     margin-left: 5vw;
     margin-top: 2vh;
-}
-
-#panel text {
+  }
+  
+  #panel text {
     line-height: 4vh;
     border-right: 1rpx solid #88622Ddd;
     border-bottom: 1rpx solid #88622Ddd;
     font-size: 22rpx;
-}
-
-.flex-row {
+  }
+  
+  .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-.flex-column {
+    border-radius: 6%;
+  }
+  
+  .flex-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-}
-
-.flex-cell {
+  }
+  
+  .flex-cell {
     flex: 1;
-}
-
-.typeimg2 {
+  }
+  
+  .typeimg {
     width: 23vw;
     margin-top: 2vh;
     height: 18vh;
     background-color: black;
     float: left;
     margin-left: 5vw;
-}
+  }
+  
+  
+  .flex-column-bottom {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  #panel-bottom {
+    width: 98%;
+  }
+  
+  .flex-row-bottom {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .buttompic{
+    height: 25vw;
+    margin:2% 0% 0% 2%;
+  }
+  
+  .buttompic2{
+    height: 22vw;
+    margin:2% 0% 0% 2%;
+  }

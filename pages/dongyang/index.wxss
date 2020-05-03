@@ -1,0 +1,32 @@
+page {
+  background: #FCF7F8;
+  margin:2%;
+}
+
+.title{
+  color: black;
+  margin:3% 3% 3% 3%;
+  font-size: 36rpx;
+}
+
+.advise{
+  color: black;
+  display: flex;
+  margin:5% 5% 5% 5%;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.1);
+  height: 75rpx;
+}
+
+.advisename
+{
+  margin-left:5%;
+  font-size: 30rpx;
+  align-items: center;
+}
+
+.shiliao{
+  border-left: 5rpx solid;
+  color: black;
+  margin:5% 5% 5% 5%;
+}

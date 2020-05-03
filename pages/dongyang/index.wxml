@@ -1,0 +1,14 @@
+<view class="title">动法推荐</view>
+<view class="advise">
+<view class="advisename">体育锻炼</view>
+</view>
+<view class="shiliao" style="border-color: #4F8CCE;">多做有益于心脏血脉的活动，如各种舞蹈、太极拳、八段锦、长寿功、
+                                    内养操、保健按摩术，以全身各部都能活动，以助气血运行为原则。</view>
+<view class="advise">
+<view class="advisename">适宜运动</view>
+</view>                                                       
+<view class="shiliao" style="border-color: #59D2FE;">慢跑、散步、八段锦、五禽戏、太极拳、易筋经、室外有氧运动</view>
+<view class="advise">
+<view class="advisename">禁忌运动</view>
+</view>    
+<view class="shiliao" style="border-color: #7BDFF2;">激烈运动</view>

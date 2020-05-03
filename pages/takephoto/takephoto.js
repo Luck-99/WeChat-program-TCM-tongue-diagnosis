@@ -151,7 +151,7 @@ Page({
             display2: "block"
         });
     },
-    UploadImgOpt: function(t) {  //上传图片到服务器
+    /*UploadImgOpt: function(t) {  //上传图片到服务器
         var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://120.26.172.111/test/upload_photo.php"; 
         wx.uploadFile({
             url: o,
@@ -167,7 +167,7 @@ Page({
                 console.log(n), a.Discern(n);
             }
         });
-    },
+    },*/
     cameradirection: function() {
         "front" == this.data.qianhou ? (this.setData({
             qianhou: "back"
@@ -187,7 +187,7 @@ Page({
         wx.request({
             url: a + "/testtongue2",
             data: {
-                imgpath: e,
+                imgpath: 'https://120.26.172.111/test/photo/min_img/timg.jpg',
                 openid: getApp().globalData.openID
             },
             header: {
