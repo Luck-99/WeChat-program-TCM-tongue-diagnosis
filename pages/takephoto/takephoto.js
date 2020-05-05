@@ -23,8 +23,6 @@ Page({
         imgsrc0: "",
         imgsrc1: "",
         imgsrc2: "",
-        latitude: 0,
-        longitude: 0,
         restype: [ "", "", "" ],
         user_cuttongue: "",
         cha1: "",
@@ -43,7 +41,7 @@ Page({
     },
     onReady: function() {},
     onShow: function() {
-        this.GetUserLocation();
+        
     },
     onHide: function() {},
     onUnload: function() {},
@@ -92,7 +90,7 @@ Page({
     InsertData: function(t) {  //发数据到服务器
         var e = this;
         wx.request({
-            url: a + "/obtainres2",
+            url: 'https://www.shezhen.top/test/mysql_operation_insert.php',
             data: {
                 openid: getApp().globalData.openID,
                 latitude: e.data.latitude,
@@ -108,7 +106,41 @@ Page({
                 user_cha7: e.data.cha7,
                 user_cha8: e.data.cha8,
                 user_cha9: e.data.cha9,
-                user_cha10: e.data.cha10
+                user_cha10: e.data.cha10,
+                tizhi:"血瘀体质2血瘀体质",
+                cjbx:"肤色晦黯，口唇黯淡，皮肤粗糙，指甲无光泽，色素沉着，容易出现瘀斑。有时出现头、胸、胁、"+
+                "少腹或四肢等处刺痛，痛处固定，甚至夜晚低热，或有出血倾向，吐血，解柏油样大便等，"+
+                "或腹内有症瘕积块，瘀血内阻，气血不畅。女生会出现痛经，月经带有血块。情绪易出现烦躁，健忘。",
+                jsty:"要培养乐观的情绪，苦闷、抑郁则可加重血瘀倾向。",
+                fbqx:"不耐受寒邪。易患身体各个部位出现疼痛，瘀血及肿物及等。",
+                ylts:"习书作画可以调气血，通经脉，因为习书作画需有正确的姿势，这样能提全身之气，还必须集中精力，"+
+                "心平气和，从而调动全身气和力，使体内各部分功能得到调整促进血液流通，改善身体气滞血瘀的状态。",
+                sjys:"春天寒温时变,应避免外邪入侵,适当运动,以适应春天生发之性；夏天天气炎热,人体出汗较多,应注意防暑,"+
+                "多饮温水,不喝冰冻饮料,以免寒凝血脉；秋天气候干燥,宜适当保暖,多饮开水,增加身体锻炼,活动筋骨,"+
+                "以促进血液循环,缓解瘀血体质状态；冬天寒邪当令,应注意保暖,避免寒邪侵袭。",
+                tydl:"多做有益于心脏血脉的活动，如各种舞蹈、太极拳、八段锦、长寿功、"+
+                "内养操、保健按摩术，以全身各部都能活动，以助气血运行为原则。",
+                qjts:"居处宜干燥,因湿性粘滞,易使血液运行不畅。血瘀者要避免寒冷刺激，"+
+                "日常生活中应注意动静结合，不可贪图安逸，加重气血郁滞。",
+                yytl:"多听徵音，如《狂欢》、《解放军进行曲》、《卡门序曲》 、《喜洋洋》、"+
+                "《步步高》、《流水》、《汉宫秋月》等。",
+                jlbj:"常按血海穴，可适当选用推拿、按摩、拔罐、刮痧等疗法。",
+                yyjj:"忌补益涩血之品",
+                sl:"黑豆川芎粥。川芎10g用纱布包裹，与生山楂15g，黑豆25g，粳米50g，一起加入水煎煮熟，加适量红糖。"+
+                "分次温服。可活血祛瘀、行气止痛。"+ "桃仁粥。准备好桃仁50克，红米150克。先将桃仁去皮尖研末"+
+                "，用水煎煮，去渣取汁；再用桃仁汁煮红米粥。此粥有破血行瘀功效。可以治疗瘀血肿痛，跌打损伤病人。"+
+                "但孕妇禁食。"+"合适的食物。黑豆、黄豆、香菇、茄子、油菜、羊血、芒果、番木瓜、海藻、海带"+
+                "、紫菜、萝卜、金橘、橙、柚子、桃、李、山楂、醋、玫瑰花、绿茶、红糖、黄酒、葡萄酒、"+
+               "白酒等食物"+"少吃的食物。甘薯、芋头、蚕豆、栗子、乌梅、苦瓜、柿子、奶油、肥肉、"+
+                "鳗鱼、蟹黄、蛋黄、鱼虾、巧克力、小麦、荞麦。",
+                zhengxing:"表寒2症",
+                jieshi:"jieshi",
+                sysw:"sysw",
+                jjsw:"jjsw",
+                syyd:"syyd",
+                jjyd:"jjyd",
+                syys:"syys",
+                syyy:"syyy"
             },
             header: {
                 "Content-Type": "application/json"
@@ -151,8 +183,8 @@ Page({
             display2: "block"
         });
     },
-    /*UploadImgOpt: function(t) {  //上传图片到服务器
-        var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://120.26.172.111/test/upload_photo.php"; 
+    UploadImgOpt: function(t) {  //上传图片到服务器
+        var a = this, e = t.substr(t.lastIndexOf("/") + 1), o = "https://www.shezhen.top/test/upload_photo.php"; 
         wx.uploadFile({
             url: o,
             name: "file",
@@ -167,7 +199,7 @@ Page({
                 console.log(n), a.Discern(n);
             }
         });
-    },*/
+    },
     cameradirection: function() {
         "front" == this.data.qianhou ? (this.setData({
             qianhou: "back"
@@ -175,19 +207,13 @@ Page({
             qianhou: "front"
         }), console.log(this.data.qianhou));
     },
-    GetUserLocation: function() {
-        var t = this;
-        0 == getApp().globalData.latitude && 0 == getApp().globalData.longitude ? t.getUserLocation() : t.setData({
-            latitude: getApp().globalData.latitude,
-            longitude: getApp().globalData.longitude
-        });
-    },
+    
     Discern: function(e) {  //发送到服务器调用API
         var o = this;
         wx.request({
             url: a + "/testtongue2",
             data: {
-                imgpath: 'https://120.26.172.111/test/photo/min_img/timg.jpg',
+                imgpath: 'https://www.shezhen.top/test/photo/min_img/timg.jpg',
                 openid: getApp().globalData.openID
             },
             header: {
@@ -230,47 +256,5 @@ Page({
             }
         });
     },
-    getUserLocation: function() {
-        var t = this;
-        wx.getSetting({
-            success: function(a) {
-                1 == a.authSetting["scope.userLocation"] ? wx.getLocation({
-                    type: "wgs84",
-                    success: function(a) {
-                        console.log("已经授权地址信息：", a), t.setData({
-                            latitude: a.latitude,
-                            longitude: a.longitude
-                        }), getApp().globalData.latitude = a.latitude, getApp().globalData.longitude = a.longitude;
-                    }
-                }) : void 0 == a.authSetting["scope.userLocation"] ? wx.getLocation({
-                    type: "wgs84",
-                    success: function(a) {
-                        console.log("第一次授权地址信息：", a), t.setData({
-                            latitude: a.latitude,
-                            longitude: a.longitude
-                        }), getApp().globalData.latitude = a.latitude, getApp().globalData.longitude = a.longitude;
-                    }
-                }) : wx.showModal({
-                    title: "请求授权当前位置",
-                    content: "需要获取您的地理位置，请确认授权",
-                    showCancel: !1,
-                    success: function(a) {
-                        a.confirm && wx.openSetting({
-                            success: function(a) {
-                                1 == a.authSetting["scope.userLocation"] ? wx.getLocation({
-                                    type: "wgs84",
-                                    success: function(a) {
-                                        console.log("未授权地址信息：", a), t.setData({
-                                            latitude: a.latitude,
-                                            longitude: a.longitude
-                                        }), getApp().globalData.latitude = a.latitude, getApp().globalData.longitude = a.longitude;
-                                    }
-                                }) : t.GetUserLocation();
-                            }
-                        });
-                    }
-                });
-            }
-        });
-    }
+
 });

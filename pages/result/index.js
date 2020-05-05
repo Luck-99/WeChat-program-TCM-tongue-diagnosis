@@ -7,18 +7,14 @@ function a(a, t, e) {
     }) : a[t] = e, a;
   }
   
-  var t = getApp().globalData.requesturl, e = require("../../utils/tizhi.js");
+  var t = getApp().globalData.requesturl;
   
   Page({
     data: {
         tizhi: "",
         resultobj: [],
         resultobjarr: [],
-        cover: "",
-        shareimg: "",
-        windowWidth: 0,
-        windowHeight: 0,
-        tizhi2: "血瘀症",
+        tizhi2: "",
         cha1: "",
         cha2: "",
         cha3: "",
@@ -44,16 +40,8 @@ function a(a, t, e) {
     onLoad: function(a) {
         var t = this;
         console.log("体质数据:", a), t.setData({
-            tizhi: a.tizhi,
-            cover: e.GetTizhi(a.tizhi.split("+")[1])
-        }), console.log(t.data.cover), wx.getSystemInfo({
-            success: function(a) {
-                t.setData({
-                    windowWidth: a.windowWidth,
-                    windowHeight: a.windowHeight
-                });
-            }
-        });
+            tizhi: a.tizhi
+        }), console.log(t.data.cover);
     },
     onReady: function() {},
     onShow: function() {

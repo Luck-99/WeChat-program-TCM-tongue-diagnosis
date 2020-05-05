@@ -1,12 +1,11 @@
 <image class="topimg" src="/resources/hpbcck.png"></image>
 <view class="tipv">
-    <view class="companyv">贝叶斯科技丨</view>
+    <view class="companyv">小白科技丨</view>
     <view class="typev">AI舌象分析</view>
     <view class="{{loginshow?'':'username'}}" wx:if="{{islogin}}" >{{username}}</view>
 </view>
 <view class="photov">
-    <image bindtap="photoopt" class="photoiconshow" 
-    src="https://royal-doctor-imgs-1256678596.cos.ap-beijing.myqcloud.com/index-photo-but.gif"></image>
+    <image bindtap="photoopt" class="photoiconshow" src="/resources/photocamera.gif"></image>
     <button bindtap="photologin" class="{{loginshow?'photologinshow':'hide'}}" wx:if="{{!islogin}}"
     open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" hover-class="none"></button>
     <image class="{{loginshow?'photousershow':'hide'}}" wx:if="{{!islogin}}"
@@ -41,7 +40,7 @@
 <view bindtap="contact2" catchtouchmove="nomoveopt" class="service_boxs mask" wx:if="{{iscontact}}">
     <view class="show_qiaodao_jifen">
         <view class="authtip2">建议反馈</view>
-        <view class="authtip3">武先生：{{contents}}</view>
+        <view class="authtip3">张先生：{{contents}}</view>
         <view class="authtip4">（手机/微信同号）</view>
         <view bindtap="copyText" class="btnv2" data-text="{{contents}}">复制号码
           </view>

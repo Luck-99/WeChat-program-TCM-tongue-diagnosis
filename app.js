@@ -3,7 +3,7 @@ App({
         var e = wx.getStorageSync("logs") || [];
         e.unshift(Date.now()), wx.setStorageSync("logs", e);
     },
-    GetWxOpenID: function() {
+    /*GetWxOpenID: function() {
         var e = this;
         return new Promise(function(n, o) {
             wx.login({
@@ -32,13 +32,12 @@ App({
                 }
             });
         });
-    },
+    },*/
     globalData: {
         userInfo: null,
         openID: "",
         loginrequesturl: "https://machineeye.cn",
         requesturl: "https://machineeye.cn:3367",  //发送数据到服务器
-        imgurl: "https://royal-doctor-imgs-1256678596.cos.ap-beijing.myqcloud.com/",
         latitude: 0,
         longitude: 0,
         takeimgsrc: ""

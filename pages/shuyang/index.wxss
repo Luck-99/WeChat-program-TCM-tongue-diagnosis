@@ -7,6 +7,7 @@ page {
   color: black;
   margin:3% 3% 3% 3%;
   font-size: 36rpx;
+  font-weight: bold;
 }
 
 .advise{

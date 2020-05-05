@@ -1,4 +1,4 @@
-var t = getApp().globalData.requesturl, e = require("../../utils/tizhi.js");
+var t = getApp().globalData.requesturl;
 
 Page({
     data: {
@@ -27,16 +27,17 @@ Page({
     InitData: function() {
         var e = this;
         wx.request({
-            url: t + "/selectcon2",
+            url: "https://www.shezhen.top/test/return.php",//"https://www.shezhen.top/test/return.php" t + "/selectcon2"
             data: {
-                openid: getApp().globalData.openID
+                openid_h: getApp().globalData.openID
             },
             header: {
                 "Content-Type": "application/json"
             },
             method: "GET",
             success: function(t) {
-                console.log("获取用户查询记录数据：", t), e.DealData(t.data);
+                console.log("获取用户查询记录数据：", t),
+                e.DealData(t.data);
             },
             complete: function() {
                 setTimeout(function() {
@@ -50,19 +51,17 @@ Page({
     DealData: function(t) {
         var a = this, n = [];
         t.forEach(function(t, a) {
-            var o = t.user_testresult.split("+"), i = "";
+            var o = t.user_result.split("+"), i = "";
             o.length > 2 ? (i = "复合型体质", n[a] = {
                 id: a,
-                date: t.user_testtime,
-                type: e.GetPeople(t.user_testresult),
-                typeval2: t.user_testresult,
-                typeval: i
+                date: t.user_time,
+                typeval2: t.user_result,
+                typeval: "疑似"+i
             }) : (i = o[1], n[a] = {
                 id: a,
-                date: t.user_testtime,
-                type: e.GetPeople(o[1]),
-                typeval2: t.user_testresult,
-                typeval: i
+                date: t.user_time,
+                typeval2: t.user_result,
+                typeval: "疑似"+i
             });
         }), a.setData({
             list: n

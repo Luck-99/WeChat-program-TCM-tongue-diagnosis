@@ -10,9 +10,10 @@
     </view>
     <block wx:if="{{list.length>0}}">
         <view class="geduanv"></view>
-        <view bindtap="goresult" class="recordv border{{item.type}}" data-time="{{item.date}}" data-tizhi="{{item.typeval2}}" wx:for="{{list}}" wx:key="item">
+        <view bindtap="goresult" class="recordv" data-time="{{item.date}}" data-tizhi="{{item.typeval2}}" wx:for="{{list}}" wx:key="item">
             <view class="leftv">
                 <view class="datev">{{item.date}}</view>
+                <view class="recordname">报告详情 ></view>
                 <view class="typev">{{item.typeval}}</view>
             </view>
         </view>

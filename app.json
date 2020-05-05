@@ -8,10 +8,13 @@
     "pages/result/index",
     "pages/shibai/index",
     "pages/index/index",
-    "pages/test/index",
     "pages/logs/logs",
     "pages/takephoto/takephoto",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/shuyang/index",
+    "pages/xinyang/index",
+    "pages/shiyang/index",
+    "pages/dongyang/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

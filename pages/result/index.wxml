@@ -59,7 +59,7 @@
 </view>
 <view>
     <view>
-        <view class="flex-column" id="panel-bottom">
+        <view class="flex-column" id="panel-bottom" >
             <view class="flex-cell flex-row-bottom">
                 <image bindtap="shiyang" class="buttompic" src="/resources/shiyang.png"></image>
                 <image bindtap="shuyang" class="buttompic" src="/resources/shuyang.png"></image>

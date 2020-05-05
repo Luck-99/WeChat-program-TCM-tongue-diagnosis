@@ -49,7 +49,7 @@ page {
   }
   
   .jibenxx {
-    margin-top: 320rpx;
+    margin-top: 42%;
   }
   
   
@@ -62,12 +62,12 @@ page {
   .biaoti {
     border-left: 6rpx solid #D9A272;
     color: #4F8CCE;
-    font-size: 30rpx;
     margin-left: 34rpx;
   }
   
   .text {
     margin-left: 10rpx;
+    font-size: 30rpx;
   }
   
   #panel {
@@ -121,7 +121,7 @@ page {
   }
   
   #panel-bottom {
-    width: 98%;
+    width: 100%;
   }
   
   .flex-row-bottom {
@@ -131,10 +131,10 @@ page {
   
   .buttompic{
     height: 25vw;
-    margin:2% 0% 0% 2%;
+    margin:2% 2% 0% 2%;
   }
   
   .buttompic2{
     height: 22vw;
-    margin:2% 0% 0% 2%;
+    margin:2% 2% 0% 2%;
   }
