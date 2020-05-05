@@ -2,11 +2,9 @@
 <view class="advise">
 <view class="advisename">四季养生</view>
 </view>
-<view class="shiliao" style="border-color: #7BDFF2;">春天寒温时变,应避免外邪入侵,适当运动,以适应春天生发之性；夏天天气炎热,人体出汗较多,应注意防暑,
-                                    多饮温水,不喝冰冻饮料,以免寒凝血脉；秋天气候干燥,宜适当保暖,多饮开水,增加身体锻炼,活动筋骨,
-                                    以促进血液循环,缓解瘀血体质状态；冬天寒邪当令,应注意保暖,避免寒邪侵袭。</view>
+<view class="shiliao" style="border-color: #7BDFF2;">{{sjys}}</view>
 <view class="advise">
 <view class="advisename">经络保健</view>
 </view>                  
-<view class="shiliao" style="border-color: #A7CCED;">常按血海穴，可适当选用推拿、按摩、拔罐、刮痧等疗法。</view> 
+<view class="shiliao" style="border-color: #A7CCED;">{{jlbj}}</view> 
 

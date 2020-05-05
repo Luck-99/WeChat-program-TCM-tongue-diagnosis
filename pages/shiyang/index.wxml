@@ -2,22 +2,18 @@
 <view class="advise">
 <view class="advisename">药膳推荐</view>
 </view>
-<view class="shiliao" style="border-color: #4F8CCE;">黑豆川芎粥。川芎10g用纱布包裹，与生山楂15g，黑豆25g，粳米50g，一起加入水煎煮熟，加适量红糖。
-                                    分次温服。可活血祛瘀、行气止痛。</view>
-<view class="shiliao" style="border-color: #59D2FE;">桃仁粥。准备好桃仁50克，红米150克。先将桃仁去皮尖研末
-                                    ，用水煎煮，去渣取汁；再用桃仁汁煮红米粥。此粥有破血行瘀功效。可以治疗瘀血肿痛，跌打损伤病人。
-                                    但孕妇禁食。</view>
+<view class="shiliao" style="border-color: #4F8CCE;">{{sl1}}</view>
+<view class="shiliao" style="border-color: #59D2FE;">{{sl2}}</view>
 <view class="advise">
 <view class="advisename">适宜食物</view>
 </view>                  
-<view class="shiliao" style="border-color: #4F8CCE;">黑豆、黄豆、香菇、茄子、油菜、羊血、芒果、番木瓜、海藻、海带
-                                    、紫菜、萝卜、金橘、橙、柚子、桃、李、山楂、醋、玫瑰花、绿茶、红糖、黄酒、葡萄酒、
-                                   白酒等食物</view>   
-<view class="shiliao" style="border-color: #59D2FE;">粳米、小米、玉米、胡萝卜、马铃薯、洋葱、平菇、藕、粟子、山药、
-                    牛肉、鸡肉、兔肉、狗肉、牛肚、葡萄、红枣等</view>
+<view class="shiliao" style="border-color: #4F8CCE;">{{sysw}}</view>
 <view class="advise">
 <view class="advisename">禁忌食物</view>
 </view>                                                         
-<view class="shiliao" style="border-color: #4F8CCE;">甘薯、芋头、蚕豆、栗子、乌梅、苦瓜、柿子、奶油、肥肉、
-                                    鳗鱼、蟹黄、蛋黄、鱼虾、巧克力、小麦、荞麦。</view>
-<view class="shiliao" style="border-color: #59D2FE;">饮酒、吸烟、禁吃性质寒凉、易损伤脾气的食品、味厚滋腻、苦瓜、冬瓜、海带、螃蟹、鸭子等</view>
+<view class="shiliao" style="border-color: #59D2FE;">{{jjsw}}</view>
+<view class="advise">
+<view class="advisename">其他建议</view>
+</view>    
+<view class="shiliao" style="border-color: #4F8CCE;">{{sl3}}</view>
+<view class="shiliao" style="border-color: #59D2FE;">{{sl4}}</view>

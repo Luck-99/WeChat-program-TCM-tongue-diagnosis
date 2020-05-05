@@ -2,18 +2,16 @@
 <view class="advise">
 <view class="advisename">精神调养</view>
 </view>
-<view class="shiliao" style="border-color: #4F8CCE;">要培养乐观的情绪，苦闷、抑郁则可加重血瘀倾向。</view>
+<view class="shiliao" style="border-color: #4F8CCE;">{{jsty}}</view>
 <view class="advise">
 <view class="advisename">娱乐调摄</view>
 </view>                  
-<view class="shiliao" style="border-color: #59D2FE;">习书作画可以调气血，通经脉，因为习书作画需有正确的姿势，这样能提全身之气，还必须集中精力，
-                                    心平气和，从而调动全身气和力，使体内各部分功能得到调整促进血液流通，改善身体气滞血瘀的状态。</view> 
+<view class="shiliao" style="border-color: #59D2FE;">{{ylts}}</view> 
 <view class="advise">
 <view class="advisename">音乐调理</view>
 </view>                                                         
-<view class="shiliao" style="border-color: #7BDFF2;">多听徵音，如《狂欢》、《解放军进行曲》、《卡门序曲》 、《喜洋洋》、
-                    《步步高》、《流水》、《汉宫秋月》等</view>
+<view class="shiliao" style="border-color: #7BDFF2;">{{yytl}}</view>
 <view class="advise">
 <view class="advisename">适宜音乐</view>
 </view>                                                         
-<view class="shiliao" style="border-color: #A7CCED;">紫竹调（纯乐古筝)</view>
+<view class="shiliao" style="border-color: #A7CCED;">{{syyy}}</view>

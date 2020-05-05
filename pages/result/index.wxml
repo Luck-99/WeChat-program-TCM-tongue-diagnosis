@@ -14,36 +14,36 @@
     <view>
         <view class="flex-column" id="panel">
             <view class="flex-cell flex-row" style="color: white;background-color: #63ADF2;">
+                <text class="flex-cell flex-row">白苔</text>
+                <text class="flex-cell flex-row">薄苔</text>
+                <text class="flex-cell flex-row">齿痕</text>
+                <text class="flex-cell flex-row">点刺</text>
+                <text class="flex-cell flex-row">裂纹</text>
+            </view>
+            <view class="flex-row flex-cell" style="color: white;background-color: #A7CCED;">
                 <text class="flex-cell flex-row">{{cha1}}</text>
                 <text class="flex-cell flex-row">{{cha2}}</text>
                 <text class="flex-cell flex-row">{{cha3}}</text>
                 <text class="flex-cell flex-row">{{cha4}}</text>
                 <text class="flex-cell flex-row">{{cha5}}</text>
             </view>
-            <view class="flex-row flex-cell" style="color: white;background-color: #A7CCED;">
-                <text class="flex-cell flex-row">{{char1}}</text>
-                <text class="flex-cell flex-row">{{char2}}</text>
-                <text class="flex-cell flex-row">{{char3}}</text>
-                <text class="flex-cell flex-row">{{char4}}</text>
-                <text class="flex-cell flex-row">{{char5}}</text>
-            </view>
         </view>
     </view>
     <view>
         <view class="flex-column" id="panel">
             <view class="flex-cell flex-row" style="color: white;background-color: #63ADF2;">
+                <text class="flex-cell flex-row">腻苔</text>
+                <text class="flex-cell flex-row">舌正</text>
+                <text class="flex-cell flex-row">滑苔</text>
+                <text class="flex-cell flex-row">紫舌</text>
+                <text class="flex-cell flex-row">剥苔</text>
+            </view>
+            <view class="flex-row flex-cell" style=" color: white;background-color: #A7CCED;">
                 <text class="flex-cell flex-row">{{cha6}}</text>
                 <text class="flex-cell flex-row">{{cha7}}</text>
                 <text class="flex-cell flex-row">{{cha8}}</text>
                 <text class="flex-cell flex-row">{{cha9}}</text>
                 <text class="flex-cell flex-row">{{cha10}}</text>
-            </view>
-            <view class="flex-row flex-cell" style=" color: white;background-color: #A7CCED;">
-                <text class="flex-cell flex-row">{{char6}}</text>
-                <text class="flex-cell flex-row">{{char7}}</text>
-                <text class="flex-cell flex-row">{{char8}}</text>
-                <text class="flex-cell flex-row">{{char9}}</text>
-                <text class="flex-cell flex-row">{{char10}}</text>
             </view>
         </view>
     </view>
@@ -52,10 +52,7 @@
     <view class="biaoti">
         <text class="text">专家点评</text>
     </view>
-    <view class="describet">肤色晦黯，口唇黯淡，皮肤粗糙，指甲无光泽，色素沉着，容易出现瘀斑。有时出现头、胸、胁、
-                                    少腹或四肢等处刺痛，痛处固定，甚至夜晚低热，或有出血倾向，吐血，解柏油样大便等，
-                                    或腹内有症瘕积块，瘀血内阻，气血不畅。女生会出现痛经，月经带有血块。情绪易出现烦躁，健忘。
-                                    不耐受寒邪。易患身体各个部位出现疼痛，瘀血及肿物及等。</view>
+    <view class="describet">{{cjbx}}{{fbqx}}</view>
 </view>
 <view>
     <view>

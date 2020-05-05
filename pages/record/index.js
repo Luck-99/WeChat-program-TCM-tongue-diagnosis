@@ -12,7 +12,7 @@ Page({
         });
     },
     goresult: function(t) {
-        console.log("获取到的时间：" + t.currentTarget.dataset.time), wx.setStorageSync("tjtime", t.currentTarget.dataset.time),
+        console.log("获取到的时间：" + t.currentTarget.dataset.time)
         wx.navigateTo({
             url: "../result/index?tizhi=" + t.currentTarget.dataset.tizhi
         });
@@ -27,7 +27,7 @@ Page({
     InitData: function() {
         var e = this;
         wx.request({
-            url: "https://www.shezhen.top/test/return.php",//"https://www.shezhen.top/test/return.php" t + "/selectcon2"
+            url: t + "/test/return.php",//"https://www.shezhen.top/test/return.php" t + "/selectcon2"
             data: {
                 openid_h: getApp().globalData.openID
             },

@@ -36,8 +36,7 @@ App({
     globalData: {
         userInfo: null,
         openID: "",
-        loginrequesturl: "https://machineeye.cn",
-        requesturl: "https://machineeye.cn:3367",  //发送数据到服务器
+        requesturl: "https://www.shezhen.top",  //发送数据到服务器
         latitude: 0,
         longitude: 0,
         takeimgsrc: ""

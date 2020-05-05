@@ -90,7 +90,7 @@ Page({
     InsertData: function(t) {  //发数据到服务器
         var e = this;
         wx.request({
-            url: 'https://www.shezhen.top/test/mysql_operation_insert.php',
+            url: t + '/test/mysql_operation_insert.php',
             data: {
                 openid: getApp().globalData.openID,
                 latitude: e.data.latitude,

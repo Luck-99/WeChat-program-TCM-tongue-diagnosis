@@ -1,4 +1,4 @@
-var t = getApp().globalData.requesturl;
+var k = getApp().globalData.requesturl;
 var utilMd5 = require('../../utils/md5.js'); 
 
 Page({
@@ -104,44 +104,33 @@ Page({
       });*/
       console.log(new Date().toJSON().substring(0, 10) + " "+ new Date().toTimeString().substring(0,8));
       wx.request({
-        url: 'https://www.shezhen.top/test/mysql_operation_insert.php',
+        url: k + '/test/mysql_operation_insert.php',
         data: {
           openid_r: getApp().globalData.openID,
           time:new Date().toJSON().substring(0, 10) + " "+ new Date().toTimeString().substring(0,8),
-          tizhi:"+乱来体质",
-          cjbx:"肤色晦黯，口唇黯淡，皮肤粗糙，指甲无光泽，色素沉着，容易出现瘀斑。有时出现头、胸、胁、"+
-          "少腹或四肢等处刺痛，痛处固定，甚至夜晚低热，或有出血倾向，吐血，解柏油样大便等，"+
-          "或腹内有症瘕积块，瘀血内阻，气血不畅。女生会出现痛经，月经带有血块。情绪易出现烦躁，健忘。",
-          jsty:"要培养乐观的情绪，苦闷、抑郁则可加重血瘀倾向。",
-          fbqx:"不耐受寒邪。易患身体各个部位出现疼痛，瘀血及肿物及等。",
-          ylts:"习书作画可以调气血，通经脉，因为习书作画需有正确的姿势，这样能提全身之气，还必须集中精力，"+
-          "心平气和，从而调动全身气和力，使体内各部分功能得到调整促进血液流通，改善身体气滞血瘀的状态。",
-          sjys:"春天寒温时变,应避免外邪入侵,适当运动,以适应春天生发之性；夏天天气炎热,人体出汗较多,应注意防暑,"+
-          "多饮温水,不喝冰冻饮料,以免寒凝血脉；秋天气候干燥,宜适当保暖,多饮开水,增加身体锻炼,活动筋骨,"+
-          "以促进血液循环,缓解瘀血体质状态；冬天寒邪当令,应注意保暖,避免寒邪侵袭。",
-          tydl:"多做有益于心脏血脉的活动，如各种舞蹈、太极拳、八段锦、长寿功、"+
-          "内养操、保健按摩术，以全身各部都能活动，以助气血运行为原则。",
-          qjts:"居处宜干燥,因湿性粘滞,易使血液运行不畅。血瘀者要避免寒冷刺激，"+
-          "日常生活中应注意动静结合，不可贪图安逸，加重气血郁滞。",
-          yytl:"多听徵音，如《狂欢》、《解放军进行曲》、《卡门序曲》 、《喜洋洋》、"+
-          "《步步高》、《流水》、《汉宫秋月》等。",
-          jlbj:"常按血海穴，可适当选用推拿、按摩、拔罐、刮痧等疗法。",
+          tizhi:"乱的体质",
+          cjbx:"测试是哟你",
+          jsty:"就是太阳啊啊啊",
+          fbqx:"可能会发病",
+          ylts:"娱乐挑食测试",
+          sjys:"四季养生",
+          tydl:"体育锻炼好",
+          qjts:"起居调养",
+          yytl:"多去蹦迪",
+          jlbj:"常刮痧等疗法。",
           yyjj:"忌补益涩血之品",
-          sl:"黑豆川芎粥。川芎10g用纱布包裹，与生山楂15g，黑豆25g，粳米50g，一起加入水煎煮熟，加适量红糖。"+
-          "分次温服。可活血祛瘀、行气止痛。"+ "桃仁粥。准备好桃仁50克，红米150克。先将桃仁去皮尖研末"+
-          "，用水煎煮，去渣取汁；再用桃仁汁煮红米粥。此粥有破血行瘀功效。可以治疗瘀血肿痛，跌打损伤病人。"+
-          "但孕妇禁食。"+"合适的食物。黑豆、黄豆、香菇、茄子、油菜、羊血、芒果、番木瓜、海藻、海带"+
-          "、紫菜、萝卜、金橘、橙、柚子、桃、李、山楂、醋、玫瑰花、绿茶、红糖、黄酒、葡萄酒、"+
-         "白酒等食物"+"少吃的食物。甘薯、芋头、蚕豆、栗子、乌梅、苦瓜、柿子、奶油、肥肉、"+
-          "鳗鱼、蟹黄、蛋黄、鱼虾、巧克力、小麦、荞麦。",
-          zhengxing:"表寒症",
-          jieshi:"痰湿体质，脾困于湿，头困涨，特别是下午，比较困倦，爱嗜睡，痰比较多等主要症状的病症",
-          sysw:"粳米、小米、玉米、胡萝卜、马铃薯、洋葱、平菇、藕、粟子、山药",
-          jjsw:"饮酒、吸烟、禁吃性质寒凉、易损伤脾气的食品、味厚滋腻、苦瓜、冬瓜、海带、螃蟹、鸭子等",
-          syyd:"散步、八段锦、五禽戏、太极拳、易筋经、吐呐法",
-          jjyd:"激烈运动",
-          syys:"羊肉山药汤",
-          syyy:"紫竹调（纯乐古筝)",
+          sl1:"止痛。",
+          sl2: "50克，红米150克。先将桃仁去皮尖研末",
+          sl3:"合适的食物。黑豆、黄豆、香菇、茄子、油菜",
+          sl4:"少吃的食物。甘",
+          zhengxing:"表寒的症",
+          jieshi:"痰湿体质，嗜睡，痰比较多等主要症状的病症",
+          sysw:"粳米、小米、、山药",
+          jjsw:"饮酒、吸、苦瓜、冬瓜、海带、螃蟹、鸭子等",
+          syyd:"散步、、吐呐法",
+          jjyd:"激烈运动啊啊",
+          syys:"羊肉山药汤啊啊",
+          syyy:"紫竹调（纯乐古筝)啊啊",
           cha1:"0.821498",
           cha2:"0.896078",
           cha3:"0.66197",
@@ -152,13 +141,14 @@ Page({
           cha8:"0.539461",
           cha9:"0.753066",
           cha10:"0.950769",
+          cutTongue:"http://tongue-cut.oss-cn-beijing.aliyuncs.com/8896a35c-e191-11e9-b67d-00163e02df4a.jpg"
       },
       header: {
           "Content-Type": "application/x-www-form-urlencoded"
       },
-      method: "GET",
+      method: "POST",
       success: function(a) {
-          console.log("插入数据的结果："), console.log(a), "unsuccess" != a.data && wx.setStorageSync("tjtime", a.data);
+          console.log("插入数据的结果："), console.log(a);
           /*wx.redirectTo({
               url: "../result/index?tizhi=" + "平和型体质"
           });*/
@@ -198,7 +188,7 @@ Page({
                 loginshow: false, islogin: true, checklogin: false,username:simpleUser.nickName+',欢迎你',
               });
               wx.request({
-                url: 'https://www.shezhen.top/test/test.php',
+                url: k + '/test/test.php',
                 data: {
                   code: codes,
                   nickname: simpleUser.nickName,
