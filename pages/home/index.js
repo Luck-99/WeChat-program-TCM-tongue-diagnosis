@@ -108,7 +108,7 @@ Page({
         data: {
           openid_r: getApp().globalData.openID,
           time:new Date().toJSON().substring(0, 10) + " "+ new Date().toTimeString().substring(0,8),
-          tizhi:"阴体质",
+          tizhi:"阴的体质",
           cjbx:"测试是哟你",
           jsty:"就是太阳啊啊啊",
           fbqx:"可能会发病",
@@ -123,7 +123,7 @@ Page({
           sl2: "50克，红米150克。先将桃仁去皮尖研末",
           sl3:"合适的食物。黑豆、黄豆、香菇、茄子、油菜",
           sl4:"少吃的食物。甘",
-          zhengxing:"表寒的症",
+          zhengxing:"表寒症",
           jieshi:"痰湿体质，嗜睡，痰比较多等主要症状的病症",
           sysw:"粳米、小米、、山药",
           jjsw:"饮酒、吸、苦瓜、冬瓜、海带、螃蟹、鸭子等",

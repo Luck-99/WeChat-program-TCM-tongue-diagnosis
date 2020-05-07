@@ -24,40 +24,40 @@ Page({
         imgsrc1: "",
         imgsrc2: "",
         restype: [ "", "", "" ],
-        tizhi:"阴虚体质",
-        cjbx:"测试是哟你",
-        jsty:"就是太阳啊啊啊",
-        fbqx:"可能会发病",
-        ylts:"娱乐挑食测试",
-        sjys:"四季养生",
-        tydl:"体育锻炼好",
-        qjts:"起居调养",
-        yytl:"多去蹦迪",
-        jlbj:"常刮痧等疗法。",
-        yyjj:"忌补益涩血之品",
-        sl1:"止痛。",
-        sl2: "50克，红米150克。先将桃仁去皮尖研末",
-        sl3:"合适的食物。黑豆、黄豆、香菇、茄子、油菜",
-        sl4:"少吃的食物。甘",
-        zhengxing:"表寒的症",
-        jieshi:"痰湿体质，嗜睡，痰比较多等主要症状的病症",
-        sysw:"粳米、小米、、山药",
-        jjsw:"饮酒、吸、苦瓜、冬瓜、海带、螃蟹、鸭子等",
-        syyd:"散步、、吐呐法",
-        jjyd:"激烈运动啊啊",
-        syys:"羊肉山药汤啊啊",
-        syyy:"紫竹调（纯乐古筝)啊啊",
-        cha1:"0.821498",
-        cha2:"0.896078",
-        cha3:"0.66197",
-        cha4:"0.999882",
-        cha5:"0.464128",
-        cha6:"0.863992",
-        cha7:"0.805222",
-        cha8:"0.539461",
-        cha9:"0.753066",
-        cha10:"0.950769",
-        cuttongue:"http://tongue-cut.oss-cn-beijing.aliyuncs.com/1ddbb25a-902d-11ea-ad2e-00163e02df4a.jpg"
+        tizhi:"",
+        cjbx:"",
+        jsty:"",
+        fbqx:"",
+        ylts:"",
+        sjys:"",
+        tydl:"",
+        qjts:"",
+        yytl:"",
+        jlbj:"",
+        yyjj:"",
+        sl1:"",
+        sl2: "",
+        sl3:"",
+        sl4:"",
+        zhengxing:"",
+        jieshi:"",
+        sysw:"",
+        jjsw:"",
+        syyd:"",
+        jjyd:"",
+        syys:"",
+        syyy:"",
+        cha1:"",
+        cha2:"",
+        cha3:"",
+        cha4:"",
+        cha5:"",
+        cha6:"",
+        cha7:"",
+        cha8:"",
+        cha9:"",
+        cha10:"",
+        cuttongue:""
     },
     onLoad: function(t) {
         this.ctx = wx.createCameraContext();
@@ -95,8 +95,8 @@ Page({
         });
     },
     takePhoto_confirm: function() {
-      /*var confirm = this;
-      for (var t = this, a = t.data.restype, e = [], o = 0; o < a.length; o++) e = e.concat(a[o].split("+"));
+      var confirm = this;
+      /*for (var t = this, a = t.data.restype, e = [], o = 0; o < a.length; o++) e = e.concat(a[o].split("+"));
         console.log(e);
       for (var n = [], o = 0; o < e.length; o++) "" != e[o] && (n = n.concat(e[o]));
       for (var i = [], o = 0; o < n.length; o++) "" != n[o] && (i = i.concat(n[o]));
@@ -108,7 +108,7 @@ Page({
       wx.navigateTo({
         url: "../guodu/index"
       })*/
-      InsertData();
+      confirm.InsertData();
     },
     InsertData: function() {  //发数据到服务器
         var e = this;
@@ -202,7 +202,7 @@ Page({
     },
     
     Discern: function(u) {  //发送到服务器调用API
-      /*var o = this;
+      var o = this;
       var e= this;
       var restime= new Date().toJSON().substring(0, 10).replace(/-/g,'') + new Date().toTimeString().substring(0,8).replace(/:/g,'');
       wx.request({
@@ -212,7 +212,7 @@ Page({
           app_id:"6f05e4a27efa461a", //6f05e4a27efa461a
           version:"1.0",
           sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'63cef9097c934bfbaa033be80ff09741'), //9bba16489ba84573bb8987f3de0692cc
-          method: "jiuti",
+          method: "9tiAnalysis",
           imgpath: u
         },
         header: {
@@ -223,19 +223,19 @@ Page({
           console.log(a.data);
           if (console.log("识别的结果："), console.log(a), 200 == a.data.code) {
               var n;
-              o.setData((n = {}, t(n, "restype[0]", a.data.tiaoli.tizhi_name), //t(n, "imgsrc", e), 
+              o.setData((n = {}, //t(n, "restype[0]", a.data.tiaoli.tizhi_name), t(n, "imgsrc", e), 
               t(n, "display2", "none"),  t(n, "cuttongue", a.data.tizhi.cutTongue), 
-              /*t(n, "cha1", a.data.cha1), t(n, "cha2", a.data.cha2), t(n, "cha3", a.data.cha3), 
-              t(n, "cha4", a.data.cha4), t(n, "cha5", a.data.cha5), t(n, "cha6", a.data.cha6), 
-              t(n, "cha7", a.data.cha7), t(n, "cha8", a.data.cha8), t(n, "cha9", a.data.cha9), 
-              t(n, "cha10", a.data.cha10),*//* t(n, "tizhi", a.data.tiaoli.tizhi_name), t(n, "cjbx", a.data.tiaoli.changjianbiaoxian), 
+              t(n, "cha1", a.data.char[0].probability), t(n, "cha2", a.data.char[1].probability), t(n, "cha3", a.data.char[2].probability), 
+              t(n, "cha4", a.data.char[4].probability), t(n, "cha5", a.data.char[4].probability), t(n, "cha6", a.data.char[5].probability), 
+              t(n, "cha7", a.data.char[6].probability), t(n, "cha8", a.data.char[7].probability), t(n, "cha9", a.data.char[8].probability), 
+              t(n, "cha10", a.data.char[9].probability), t(n, "tizhi", a.data.tiaoli.tizhi_name), t(n, "cjbx", a.data.tiaoli.changjianbiaoxian), 
               t(n, "jsty", a.data.tiaoli.jingshentiaoyang), t(n, "fbqx", a.data.tiaoli.fabingqingxiang), t(n, "ylts", a.data.tiaoli.yuletiaoshe), 
               t(n, "sjys", a.data.tiaoli.sijiyangsheng), t(n, "tydl", a.data.tiaoli.tiyuduanlian), t(n, "qjts", a.data.tiaoli.qijutiaoshe), 
               t(n, "yytl", a.data.tiaoli.yinyuetiaoli), t(n, "jlbj", a.data.tiaoli.jingluobaojian), t(n, "yyjj", a.data.tiaoli.yaowuyangsheng), 
               t(n, "sl1", a.data.tiaoli.shiliao[0]), t(n, "sl2", a.data.tiaoli.shiliao[1]), t(n, "sl3", a.data.tiaoli.shiliao[2]), 
-              t(n, "sl4", a.data.tiaoli.shiliao[3]), t(n, "zhengxing", a.data.cha8), t(n, "jieshi", a.data.cha9), 
-              t(n, "sysw", a.data.cha7), t(n, "jjsw", a.data.cha8), t(n, "syyd", a.data.cha9), 
-              t(n, "jjyd", a.data.cha4), t(n, "syys", a.data.cha5), t(n, "syyy", a.data.cha6),
+              t(n, "sl4", a.data.tiaoli.shiliao[3]), t(n, "zhengxing", a.data.zhengxing[1].zhengxing_name), t(n, "jieshi", a.data.zhengxing[1].jieshi), 
+              t(n, "sysw", a.data.zhengxing[1].shiyishiwu), t(n, "jjsw", a.data.zhengxing[1].jinjishiwu), t(n, "syyd", a.data.zhengxing[1].shiyiyundong), 
+              t(n, "jjyd", a.data.zhengxing[1].jinjiyundong), t(n, "syys", a.data.zhengxing[1].shiyiyaoshan), t(n, "syyy", a.data.zhengxing[1].shiyiyinyue),
                n)),InsertData(),wx.redirectTo({
                 url: "../result/index?tizhi=" + this.data.tizhi
             });
@@ -266,7 +266,7 @@ Page({
           });
       }
       });
-      */
+      
     },
 
 });
