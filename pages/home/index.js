@@ -108,7 +108,7 @@ Page({
         data: {
           openid_r: getApp().globalData.openID,
           time:new Date().toJSON().substring(0, 10) + " "+ new Date().toTimeString().substring(0,8),
-          tizhi:"乱的体质",
+          tizhi:"阴体质",
           cjbx:"测试是哟你",
           jsty:"就是太阳啊啊啊",
           fbqx:"可能会发病",
@@ -131,17 +131,17 @@ Page({
           jjyd:"激烈运动啊啊",
           syys:"羊肉山药汤啊啊",
           syyy:"紫竹调（纯乐古筝)啊啊",
-          cha1:"0.821498",
-          cha2:"0.896078",
-          cha3:"0.66197",
-          cha4:"0.999882",
-          cha5:"0.464128",
-          cha6:"0.863992",
-          cha7:"0.805222",
-          cha8:"0.539461",
-          cha9:"0.753066",
-          cha10:"0.950769",
-          cutTongue:"http://tongue-cut.oss-cn-beijing.aliyuncs.com/8896a35c-e191-11e9-b67d-00163e02df4a.jpg"
+          cha1:"0.781498",
+          cha2:"0.586078",
+          cha3:"0.76197",
+          cha4:"0.998882",
+          cha5:"0.454128",
+          cha6:"0.43992",
+          cha7:"0.505222",
+          cha8:"0.339461",
+          cha9:"0.853066",
+          cha10:"0.750769",
+          cuttongue:"http://tongue-cut.oss-cn-beijing.aliyuncs.com/8896a35c-e191-11e9-b67d-00163e02df4a.jpg"
       },
       header: {
           "Content-Type": "application/x-www-form-urlencoded"

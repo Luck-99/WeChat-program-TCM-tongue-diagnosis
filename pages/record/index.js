@@ -51,13 +51,13 @@ Page({
     DealData: function(t) {
         var a = this, n = [];
         t.forEach(function(t, a) {
-            var o = t.user_result.split("+"), i = "";
-            o.length > 2 ? (i = "复合型体质", n[a] = {
+            var o = t.user_result, i = "";
+            o.length > 4 ? (i = "复合型体质", n[a] = {
                 id: a,
                 date: t.user_time,
                 typeval2: t.user_result,
                 typeval: "疑似"+i
-            }) : (i = o[1], n[a] = {
+            }) : (i = o, n[a] = {
                 id: a,
                 date: t.user_time,
                 typeval2: t.user_result,

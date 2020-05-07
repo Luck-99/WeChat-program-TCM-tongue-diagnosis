@@ -33,14 +33,17 @@ function a(a, t, e) {
         var t = this;
         console.log("体质数据:", a), t.setData({
             tizhi: a.tizhi
-        }), console.log(t.data.cover);
+        });//, console.log(t.data.cover)
     },
     onReady: function() {},
     onShow: function() {
         this.InitData();
     },
     InitData: function() {
-        for (var a = this, t = a.data.tizhi.split("+"), e = 1; e < t.length; e++) a.Requesttizhi(t[e], e - 1);
+        var a = this;
+        a.Requesttizhi(a.data.tizhi);
+        a.setData({tizhi2:a.data.tizhi});
+      /*for (var a = this, t = a.data.tizhi.split("+"), e = 1; e < t.length; e++) a.Requesttizhi(t[e], e - 1);
         if (t.length < 3) {
             var i = a.data.tizhi.replace("+", "").replace("型体", ""), s = a.data.tizhi.replace("+", "");
             console.log("处理后的数据" + i), a.setData({
@@ -59,7 +62,7 @@ function a(a, t, e) {
               tizhi2: i,
               tizhi3: i
             });
-        }
+        }*/
     },
     /*Requesttizhi: function(e, i) {
         var s = this;
@@ -99,10 +102,11 @@ function a(a, t, e) {
     },*/
     Requesttizhi: function(e, i) {
         var s = this;
+        console.log(e);
         wx.request({
             url: t + "/test/return2.php",
             data: {
-                tizhi: "+" + e,
+                tizhi:  e,
                 //zhengxing: wx.getStorageSync("zhengxing")
                 //openid: getApp().globalData.openID
             },

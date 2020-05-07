@@ -25,14 +25,15 @@ module.exports = function(t, r, o, i) {
         filePath: t,
         name: "file",
         formData: {
-            key: a,
+            /*key: a,
             policy: l,
             OSSAccessKeyId: u,
             signature: f,
-            success_action_status: "200"
+            success_action_status: "200",*/
+            openid_u:getApp().globalData.openID
         },
         success: function(e) {
-            200 == e.statusCode ? o(c + a) : i(new Error("上传错误:" + JSON.stringify(e)));
+            200 == e.statusCode ? o(getApp().globalData.requesturl + e.data) : i(new Error("上传错误:" + JSON.stringify(e)));
         },
         fail: function(e) {
             e.wxaddinfo = c, i(e);
