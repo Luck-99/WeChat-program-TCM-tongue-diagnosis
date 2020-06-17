@@ -132,14 +132,14 @@ Page({
                 sl2:e.data.sl2,
                 sl3:e.data.sl3,
                 sl4:e.data.sl4,
-                zhengxing:e.data.zhengxing,
+               /* zhengxing:e.data.zhengxing,
                 jieshi:e.data.jieshi,
                 sysw:e.data.sysw,
                 jjsw:e.data.jjsw,
                 syyd:e.data.syyd,
                 jjyd:e.data.jjyd,
                 syys:e.data.syys,
-                syyy:e.data.syyy,
+                syyy:e.data.syyy,*/
                 cha1:e.data.cha1,
                 cha2:e.data.cha2,
                 cha3:e.data.cha3,
@@ -211,7 +211,7 @@ Page({
           timestamp:restime,
           app_id:"6f05e4a27efa461a", 
           version:"1.0",
-          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'06871f5054bc44aca6a7afb55de2f11'), //9
+          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'06871f5054bc44aca6a7afb55de2f119'), //9
           method: "9tiAnalysis",
           imgpath: u//'https://shezhen.top/test/photo/oTLtn5EhsGAA9C7MHHFfdSzb1uwQ/20200617200638.jpg'
         },
@@ -220,29 +220,26 @@ Page({
       },
         method: "POST",
         success: function(a) {
-          console.log(a.data);
+            var data=JSON.parse(a.data.data)
+          console.log(data);
           if (console.log("识别的结果："), console.log(a)
-          ,console.log("cutTongue",a.data.cutTongue),console.log('probability0',a.data.char[0].probability), console.log('probability4',a.data.char[4].probability)
-          , console.log('tizhi_name',a.data.tiaoli.tizhi_name), console.log('fabingqingxiang',a.data.tiaoli.fabingqingxiang)
-          , console.log('shiliao0',a.data.tiaoli.shiliao[0]), console.log('shiliao2',a.data.tiaoli.shiliao[2])
-          , console.log('zhengxing_name',a.data.zhengxing[1].zhengxing_name), console.log('shiyiyaoshan',a.data.zhengxing[1].shiyiyaoshan), 
-           console.log('shiyiyinyue',a.data.zhengxing[1].shiyiyinyue),
+          ,console.log("cutTongue",data.cutTongue),console.log('probability0',data.char[1].probability), console.log('probability4',data.char)
+          , console.log('tizhi_name',data.tiaoli.tizhi_name), console.log('fabingqingxiang',data.tiaoli.fabingqingxiang)
+          , console.log('shiliao0',data.tiaoli.shiliao),
           200 == a.data.code) {
               var n;
               o.setData((n = {}, //t(n, "restype[0]", a.data.tiaoli.tizhi_name), t(n, "imgsrc", e), 
-              t(n, "display2", "none"),  t(n, "cuttongue", a.data.cutTongue), 
-              t(n, "cha1", a.data.char[0].probability), t(n, "cha2", a.data.char[1].probability), t(n, "cha3", a.data.char[2].probability), 
-              t(n, "cha4", a.data.char[4].probability), t(n, "cha5", a.data.char[4].probability), t(n, "cha6", a.data.char[5].probability), 
-              t(n, "cha7", a.data.char[6].probability), t(n, "cha8", a.data.char[7].probability), t(n, "cha9", a.data.char[8].probability), 
-              t(n, "cha10", a.data.char[9].probability), t(n, "tizhi", a.data.tiaoli.tizhi_name), t(n, "cjbx", a.data.tiaoli.changjianbiaoxian), 
-              t(n, "jsty", a.data.tiaoli.jingshentiaoyang), t(n, "fbqx", a.data.tiaoli.fabingqingxiang), t(n, "ylts", a.data.tiaoli.yuletiaoshe), 
-              t(n, "sjys", a.data.tiaoli.sijiyangsheng), t(n, "tydl", a.data.tiaoli.tiyuduanlian), t(n, "qjts", a.data.tiaoli.qijutiaoshe), 
-              t(n, "yytl", a.data.tiaoli.yinyuetiaoli), t(n, "jlbj", a.data.tiaoli.jingluobaojian), t(n, "yyjj", a.data.tiaoli.yaowuyangsheng), 
-              t(n, "sl1", a.data.tiaoli.shiliao[0]), t(n, "sl2", a.data.tiaoli.shiliao[1]), t(n, "sl3", a.data.tiaoli.shiliao[2]), 
-              t(n, "sl4", a.data.tiaoli.shiliao[3]), t(n, "zhengxing", a.data.zhengxing[1].zhengxing_name), t(n, "jieshi", a.data.zhengxing[1].jieshi), 
-              t(n, "sysw", a.data.zhengxing[1].shiyishiwu), t(n, "jjsw", a.data.zhengxing[1].jinjishiwu), t(n, "syyd", a.data.zhengxing[1].shiyiyundong), 
-              t(n, "jjyd", a.data.zhengxing[1].jinjiyundong), t(n, "syys", a.data.zhengxing[1].shiyiyaoshan), t(n, "syyy", a.data.zhengxing[1].shiyiyinyue),
-               n)),InsertData(),wx.redirectTo({
+              t(n, "display2", "none"),  t(n, "cuttongue", data.cutTongue), 
+              t(n, "cha1", data.char[0].probability), t(n, "cha2", data.char[1].probability), t(n, "cha3", data.char[2].probability), 
+              t(n, "cha4", data.char[4].probability), t(n, "cha5", data.char[4].probability), t(n, "cha6", data.char[5].probability), 
+              t(n, "cha7", data.char[6].probability), t(n, "cha8", data.char[7].probability), t(n, "cha9", data.char[8].probability), 
+              t(n, "cha10", data.char[9].probability), t(n, "tizhi", data.tiaoli.tizhi_name), t(n, "cjbx", data.tiaoli.changjianbiaoxian), 
+              t(n, "jsty", data.tiaoli.jingshentiaoyang), t(n, "fbqx", data.tiaoli.fabingqingxiang), t(n, "ylts", data.tiaoli.yuletiaoshe), 
+              t(n, "sjys", data.tiaoli.sijiyangsheng), t(n, "tydl", data.tiaoli.tiyuduanlian), t(n, "qjts", data.tiaoli.qijutiaoshe), 
+              t(n, "yytl", data.tiaoli.yinyuetiaoli), t(n, "jlbj", data.tiaoli.jingluobaojian), t(n, "yyjj", data.tiaoli.yaowuyangsheng), 
+              t(n, "sl1", data.tiaoli.shiliao[0]), t(n, "sl2", data.tiaoli.shiliao[1]), t(n, "sl3", data.tiaoli.shiliao[2]), 
+              t(n, "sl4", data.tiaoli.shiliao[3]),
+               n)),o.InsertData(),wx.redirectTo({
                 url: "../result/index?tizhi=" + this.data.tizhi
             });
           }

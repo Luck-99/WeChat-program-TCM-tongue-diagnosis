@@ -23,14 +23,7 @@
         <image class="iconv" src="/resources/help.png"></image>
         <view class="optt">使用帮助</view>
     </view>
-    <view bindtap="sharefriends" class="optvv">
-        <image class="iconv" src="/resources/share.png"></image>
-        <view class="optt">分享朋友</view>
-    </view>
-    <view bindtap="gocontact" class="optvv">
-        <image class="iconv" src="/resources/contact.png"></image>
-        <view class="optt">建议反馈</view>
-    </view>
+    
 </view>
 <view class="point" wx:if="{{checklogin}}">
     <view bindtap="pointyes" class="point2">
