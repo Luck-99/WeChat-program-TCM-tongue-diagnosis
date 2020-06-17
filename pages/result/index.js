@@ -119,17 +119,17 @@ function a(a, t, e) {
                 console.log("获取体质的基本信息：", t);
                 //var o = "resultobj[" + String(i) + "]";
                 s.setData((e = {}, //a(e, o, t.data[0]),
-                a(e, "cha1", (100 * parseFloat(t.data[2].cha1)).toFixed(1) + "%"), 
-                a(e, "cha2", (100 * parseFloat(t.data[2].cha2)).toFixed(1) + "%"), 
-                a(e, "cha3", (100 * parseFloat(t.data[2].cha3)).toFixed(1) + "%"), 
-                a(e, "cha4", (100 * parseFloat(t.data[2].cha4)).toFixed(1) + "%"), 
-                a(e, "cha5", (100 * parseFloat(t.data[2].cha5)).toFixed(1) + "%"), 
-                a(e, "cha6", (100 * parseFloat(t.data[2].cha6)).toFixed(1) + "%"), 
-                a(e, "cha7", (100 * parseFloat(t.data[2].cha7)).toFixed(1) + "%"), 
-                a(e, "cha8", (100 * parseFloat(t.data[2].cha8)).toFixed(1) + "%"), 
-                a(e, "cha9", (100 * parseFloat(t.data[2].cha9)).toFixed(1) + "%"), 
-                a(e, "cha10", (100 * parseFloat(t.data[2].cha10)).toFixed(1) + "%"), 
-                a(e, "typeimg2", t.data[2].cuttongue),
+                a(e, "cha1", (100 * parseFloat(t.data[1].cha1)).toFixed(1) + "%"), 
+                a(e, "cha2", (100 * parseFloat(t.data[1].cha2)).toFixed(1) + "%"), 
+                a(e, "cha3", (100 * parseFloat(t.data[1].cha3)).toFixed(1) + "%"), 
+                a(e, "cha4", (100 * parseFloat(t.data[1].cha4)).toFixed(1) + "%"), 
+                a(e, "cha5", (100 * parseFloat(t.data[1].cha5)).toFixed(1) + "%"), 
+                a(e, "cha6", (100 * parseFloat(t.data[1].cha6)).toFixed(1) + "%"), 
+                a(e, "cha7", (100 * parseFloat(t.data[1].cha7)).toFixed(1) + "%"), 
+                a(e, "cha8", (100 * parseFloat(t.data[1].cha8)).toFixed(1) + "%"), 
+                a(e, "cha9", (100 * parseFloat(t.data[1].cha9)).toFixed(1) + "%"), 
+                a(e, "cha10", (100 * parseFloat(t.data[1].cha10)).toFixed(1) + "%"), 
+                a(e, "typeimg2", t.data[1].cuttongue),
                 a(e, "cjbx", t.data[0].cjbx),a(e, "fbqx", t.data[0].fbqx), e));
                 wx.setStorageSync('tizhi', t.data[0]),wx.setStorageSync('zhengxing', t.data[1]);
             }

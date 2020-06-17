@@ -7,13 +7,8 @@
 <view class="advise">
 <view class="advisename">适宜食物</view>
 </view>                  
-<view class="shiliao" style="border-color: #4F8CCE;">{{sysw}}</view>
-<view class="advise">
-<view class="advisename">禁忌食物</view>
-</view>                                                         
-<view class="shiliao" style="border-color: #59D2FE;">{{jjsw}}</view>
+<view class="shiliao" style="border-color: #4F8CCE;">{{sl3}}</view>
 <view class="advise">
 <view class="advisename">其他建议</view>
-</view>    
-<view class="shiliao" style="border-color: #4F8CCE;">{{sl3}}</view>
+</view>                                                         
 <view class="shiliao" style="border-color: #59D2FE;">{{sl4}}</view>

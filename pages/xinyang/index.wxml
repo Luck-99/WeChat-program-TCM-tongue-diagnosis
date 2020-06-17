@@ -11,7 +11,4 @@
 <view class="advisename">音乐调理</view>
 </view>                                                         
 <view class="shiliao" style="border-color: #7BDFF2;">{{yytl}}</view>
-<view class="advise">
-<view class="advisename">适宜音乐</view>
-</view>                                                         
-<view class="shiliao" style="border-color: #A7CCED;">{{syyy}}</view>
+

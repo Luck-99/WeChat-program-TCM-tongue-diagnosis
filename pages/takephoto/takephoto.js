@@ -132,14 +132,6 @@ Page({
                 sl2:e.data.sl2,
                 sl3:e.data.sl3,
                 sl4:e.data.sl4,
-               /* zhengxing:e.data.zhengxing,
-                jieshi:e.data.jieshi,
-                sysw:e.data.sysw,
-                jjsw:e.data.jjsw,
-                syyd:e.data.syyd,
-                jjyd:e.data.jjyd,
-                syys:e.data.syys,
-                syyy:e.data.syyy,*/
                 cha1:e.data.cha1,
                 cha2:e.data.cha2,
                 cha3:e.data.cha3,
@@ -211,9 +203,9 @@ Page({
           timestamp:restime,
           app_id:"6f05e4a27efa461a", 
           version:"1.0",
-          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'06871f5054bc44aca6a7afb55de2f119'), //9
+          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'06871f5054bc44aca6a7afb55de2f119'), 
           method: "9tiAnalysis",
-          imgpath: u//'https://shezhen.top/test/photo/oTLtn5EhsGAA9C7MHHFfdSzb1uwQ/20200617200638.jpg'
+          imgpath: u
         },
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -222,13 +214,10 @@ Page({
         success: function(a) {
             var data=JSON.parse(a.data.data)
           console.log(data);
-          if (console.log("识别的结果："), console.log(a)
-          ,console.log("cutTongue",data.cutTongue),console.log('probability0',data.char[1].probability), console.log('probability4',data.char)
-          , console.log('tizhi_name',data.tiaoli.tizhi_name), console.log('fabingqingxiang',data.tiaoli.fabingqingxiang)
-          , console.log('shiliao0',data.tiaoli.shiliao),
+          if (console.log("识别的结果："), console.log(a),
           200 == a.data.code) {
               var n;
-              o.setData((n = {}, //t(n, "restype[0]", a.data.tiaoli.tizhi_name), t(n, "imgsrc", e), 
+              o.setData((n = {}, 
               t(n, "display2", "none"),  t(n, "cuttongue", data.cutTongue), 
               t(n, "cha1", data.char[0].probability), t(n, "cha2", data.char[1].probability), t(n, "cha3", data.char[2].probability), 
               t(n, "cha4", data.char[4].probability), t(n, "cha5", data.char[4].probability), t(n, "cha6", data.char[5].probability), 
@@ -239,9 +228,7 @@ Page({
               t(n, "yytl", data.tiaoli.yinyuetiaoli), t(n, "jlbj", data.tiaoli.jingluobaojian), t(n, "yyjj", data.tiaoli.yaowuyangsheng), 
               t(n, "sl1", data.tiaoli.shiliao[0]), t(n, "sl2", data.tiaoli.shiliao[1]), t(n, "sl3", data.tiaoli.shiliao[2]), 
               t(n, "sl4", data.tiaoli.shiliao[3]),
-               n)),o.InsertData(),wx.redirectTo({
-                url: "../result/index?tizhi=" + this.data.tizhi
-            });
+               n)),o.InsertData();
           }
           else 400 == a.data.code ? (wx.hideLoading(), o.setData({  
             display4: "block"
