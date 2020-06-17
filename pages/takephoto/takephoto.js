@@ -209,11 +209,11 @@ Page({
         url: "http://www.bayescience.com/api/analysis",
         data:{
           timestamp:restime,
-          app_id:"6f05e4a27efa461a", //6f05e4a27efa461a
+          app_id:"6f05e4a27efa461a", 
           version:"1.0",
-          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'63cef9097c934bfbaa033be80ff09741'), //9bba16489ba84573bb8987f3de0692cc
+          sign:utilMd5.hexMD5(utilMd5.hexMD5(restime)+'06871f5054bc44aca6a7afb55de2f11'), //9
           method: "9tiAnalysis",
-          imgpath: u
+          imgpath: u//'https://shezhen.top/test/photo/oTLtn5EhsGAA9C7MHHFfdSzb1uwQ/20200617200638.jpg'
         },
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -221,10 +221,16 @@ Page({
         method: "POST",
         success: function(a) {
           console.log(a.data);
-          if (console.log("识别的结果："), console.log(a), 200 == a.data.code) {
+          if (console.log("识别的结果："), console.log(a)
+          ,console.log("cutTongue",a.data.cutTongue),console.log('probability0',a.data.char[0].probability), console.log('probability4',a.data.char[4].probability)
+          , console.log('tizhi_name',a.data.tiaoli.tizhi_name), console.log('fabingqingxiang',a.data.tiaoli.fabingqingxiang)
+          , console.log('shiliao0',a.data.tiaoli.shiliao[0]), console.log('shiliao2',a.data.tiaoli.shiliao[2])
+          , console.log('zhengxing_name',a.data.zhengxing[1].zhengxing_name), console.log('shiyiyaoshan',a.data.zhengxing[1].shiyiyaoshan), 
+           console.log('shiyiyinyue',a.data.zhengxing[1].shiyiyinyue),
+          200 == a.data.code) {
               var n;
               o.setData((n = {}, //t(n, "restype[0]", a.data.tiaoli.tizhi_name), t(n, "imgsrc", e), 
-              t(n, "display2", "none"),  t(n, "cuttongue", a.data.tizhi.cutTongue), 
+              t(n, "display2", "none"),  t(n, "cuttongue", a.data.cutTongue), 
               t(n, "cha1", a.data.char[0].probability), t(n, "cha2", a.data.char[1].probability), t(n, "cha3", a.data.char[2].probability), 
               t(n, "cha4", a.data.char[4].probability), t(n, "cha5", a.data.char[4].probability), t(n, "cha6", a.data.char[5].probability), 
               t(n, "cha7", a.data.char[6].probability), t(n, "cha8", a.data.char[7].probability), t(n, "cha9", a.data.char[8].probability), 

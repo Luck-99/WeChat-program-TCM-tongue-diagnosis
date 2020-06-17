@@ -102,7 +102,7 @@ Page({
           });
       }
       });*/
-      console.log(new Date().toJSON().substring(0, 10) + " "+ new Date().toTimeString().substring(0,8));
+     /* console.log(new Date().toJSON().substring(0, 10) + " "+ new Date().toTimeString().substring(0,8));
       wx.request({
         url: k + '/test/mysql_operation_insert.php',
         data: {
@@ -152,8 +152,8 @@ Page({
           /*wx.redirectTo({
               url: "../result/index?tizhi=" + "平和型体质"
           });*/
-      }
-      });
+      /*}
+      });*/
       
     },
     gorecord: function() {
