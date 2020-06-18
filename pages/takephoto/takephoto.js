@@ -259,12 +259,12 @@ Page({
                 }
             });
           }
-          else 400 == x.data.code || data.message=='图片质量过低' ? (wx.hideLoading(), o.setData({  
+          else 400 == x.data.code  ? (wx.hideLoading(), o.setData({  
             display4: "block"
         }), setTimeout(function() {o.setData({
                 display4: "none"
             });
-        }, 2e3)) : 500 == x.data.code ? (wx.hideLoading(), o.setData({
+        }, 2e3)) : 500 == x.data.code || data.message=='图片质量过低' ? (wx.hideLoading(), o.setData({
             display5: "block"
         }), setTimeout(function() {
             o.setData({
