@@ -178,7 +178,7 @@ Page({
       var o = this;
       var restime= new Date().toJSON().substring(0, 10).replace(/-/g,'') + new Date().toTimeString().substring(0,8).replace(/:/g,'');
       wx.request({
-        url: "http://www.bayescience.com/api/analysis",
+        url: a + "/test/api.php",
         data:{
           timestamp:restime,
           app_id:"6f05e4a27efa461a", 
