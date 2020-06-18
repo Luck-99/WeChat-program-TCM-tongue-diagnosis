@@ -20,7 +20,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
     "backgroundColor": "#FFFFFF",
-    "navigationBarTitleText": "AI舌象分析",
+    "navigationBarTitleText": "AI舌健",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": false
   },

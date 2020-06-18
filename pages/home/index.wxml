@@ -1,7 +1,6 @@
 <image class="topimg" src="/resources/hpbcck.png"></image>
 <view class="tipv">
-    <view class="companyv">小白科技丨</view>
-    <view class="typev">AI舌象分析</view>
+    <view class="typev">体质检测 & 疗养建议</view>
     <view class="{{loginshow?'':'username'}}" wx:if="{{islogin}}" >{{username}}</view>
 </view>
 <view class="photov">
