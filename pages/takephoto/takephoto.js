@@ -191,11 +191,11 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
       },
         method: "POST",
-        success: function(a) {
-        console.log(a);
-        var data=JSON.parse(a.data.data);
+        success: function(x) {
+        console.log(x);
+        var data=JSON.parse(x.data.data);
           if (console.log("识别的结果："),
-          200 == a.data.code) {
+          200 == x.data.code) {
               var n;
               o.setData((n = {}, 
               t(n, "display2", "none"),  t(n, "cuttongue", data.cutTongue), t(n, "display1", "block"), 
@@ -207,18 +207,66 @@ Page({
               t(n, "sjys", data.tiaoli.sijiyangsheng), t(n, "tydl", data.tiaoli.tiyuduanlian), t(n, "qjts", data.tiaoli.qijutiaoshe), 
               t(n, "yytl", data.tiaoli.yinyuetiaoli), t(n, "jlbj", data.tiaoli.jingluobaojian), t(n, "yyjj", data.tiaoli.yaowuyangsheng), 
               t(n, "sl1", data.tiaoli.shiliao[0]), t(n, "sl2", data.tiaoli.shiliao[1]), t(n, "sl3", data.tiaoli.shiliao[2]), 
-              t(n, "sl4", data.tiaoli.shiliao[3]),
-               n)),this.setData({ display3: "block" }), wx.hideLoading(),o.InsertData(),
-               setTimeout(function () {
+              t(n, "sl4", data.tiaoli.shiliao[3]),t(n,"display3","block"),
+               n)),wx.hideLoading(),  
+               wx.request({
+                url: a + '/test/mysql_operation_insert.php',
+                data: {
+                    openid_r: getApp().globalData.openID,
+                    time:new Date().toJSON().substring(0, 10) + " "+ new Date().toTimeString().substring(0,8),
+                    tizhi:data.tiaoli.tizhi_name,
+                    cjbx:data.tiaoli.changjianbiaoxian,
+                    jsty:data.tiaoli.jingshentiaoyang,
+                    fbqx:data.tiaoli.fabingqingxiang,
+                    ylts:data.tiaoli.yuletiaoshe,
+                    sjys:data.tiaoli.sijiyangsheng,
+                    tydl:data.tiaoli.tiyuduanlian,
+                    qjts:data.tiaoli.qijutiaoshe,
+                    yytl:data.tiaoli.yinyuetiaoli,
+                    jlbj:data.tiaoli.jingluobaojian,
+                    yyjj:data.tiaoli.yaowuyangsheng,
+                    sl1:data.tiaoli.shiliao[0],
+                    sl2:data.tiaoli.shiliao[1],
+                    sl3:data.tiaoli.shiliao[2],
+                    sl4:data.tiaoli.shiliao[3],
+                    cha1:data.char[0].probability,
+                    cha2:data.char[1].probability,
+                    cha3:data.char[2].probability,
+                    cha4:data.char[3].probability,
+                    cha5:data.char[4].probability,
+                    cha6:data.char[5].probability,
+                    cha7:data.char[6].probability,
+                    cha8:data.char[7].probability,
+                    cha9:data.char[8].probability,
+                    cha10:data.char[9].probability,
+                    cuttongue:data.cutTongue
+                },
+                header: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                method: "POST",
+                success: function(a) {
+                    console.log("插入数据的结果："), console.log(a)
+                    wx.redirectTo({
+                        url: "../result/index?tizhi=" +data.tiaoli.tizhi_name
+                    });
+                },
+                fail: function(t) {
+                    this.setData({
+                        showshibie: !1,
+                        showtimeout: !0
+                    });
+                }
+            });setTimeout(function () {
                 this.setData({display3: "none"});
                }, 2e3);
           }
-          else 400 == a.data.code ? (wx.hideLoading(), o.setData({  
+          else 400 == x.data.code ? (wx.hideLoading(), o.setData({  
             display4: "block"
         }), setTimeout(function() {o.setData({
                 display4: "none"
             });
-        }, 2e3)) : 500 == a.data.code ? (wx.hideLoading(), o.setData({
+        }, 2e3)) : 500 == x.data.code ? (wx.hideLoading(), o.setData({
             display5: "block"
         }), setTimeout(function() {
             o.setData({
