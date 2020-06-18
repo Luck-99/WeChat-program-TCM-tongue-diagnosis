@@ -39,14 +39,14 @@ Page({
         sl2: "",
         sl3:"",
         sl4:"",
-        zhengxing:"",
+        /*zhengxing:"",
         jieshi:"",
         sysw:"",
         jjsw:"",
         syyd:"",
         jjyd:"",
         syys:"",
-        syyy:"",
+        syyy:"",*/
         cha1:"",
         cha2:"",
         cha3:"",
@@ -76,39 +76,20 @@ Page({
         this.ctx.takePhoto({
             quality: "high",
             success: function(a) {
-                wx.showLoading({
-                    title: "图片正在上传..",
-                    mask: !0
-                  });
                 e(a.tempImagePath, "", function(a) {
-                    console.log("======上传成功图片地址为：", a), t.Discern(a);
+                    console.log("======上传成功图片地址为：", a), t.setData({imgsrc:a,display1: "block",display2: "none"});
                 }, function(t) {
                     console.log("======上传失败======", t);
                 });
-                confirm.setData({ display3: "block" }), wx.hideLoading(),
-        setTimeout(function () {
-          console.log("执行了定时器"), confirm.setData({
-            display3: "none"
-          });
-        }, 2e3);
             }
         });
     },
     takePhoto_confirm: function() {
       var confirm = this;
-      /*for (var t = this, a = t.data.restype, e = [], o = 0; o < a.length; o++) e = e.concat(a[o].split("+"));
-        console.log(e);
-      for (var n = [], o = 0; o < e.length; o++) "" != e[o] && (n = n.concat(e[o]));
-      for (var i = [], o = 0; o < n.length; o++) "" != n[o] && (i = i.concat(n[o]));
-      if (console.log(i), n.length > 0) {
-            for (var c = "", o = 0; o < n.length; o++) c = c + "+" + n[o];
-            t.InsertData(c);
-      }
-      
-      wx.navigateTo({
-        url: "../guodu/index"
-      })*/
-      confirm.InsertData();
+      wx.showLoading({
+        title: "图片正在上传..",
+        mask: !0
+      }),confirm.Discern(confirm.data.imgsrc);
     },
     InsertData: function() {  //发数据到服务器
         var e = this;
@@ -170,8 +151,8 @@ Page({
             sourceType: [ "album", "camera" ],
             success: function(a) {
                 var n = a.tempFilePaths[0], i = o.formatTime(new Date());
-                console.log(i), e(n,  "", function(a) {
-                    console.log("======上传成功图片地址为：", a), t.Discern(a),t.InsertData();
+                console.log(i), e(n,"", function(a) {
+                    console.log("======上传成功图片地址为：", a), t.setData({imgsrc:a,display1: "block",display2: "none"});
                 }, function(t) {
                     console.log("======上传失败======", t);
                 });
@@ -195,7 +176,6 @@ Page({
     
     Discern: function(u) {  //发送到服务器调用API
       var o = this;
-      var e= this;
       var restime= new Date().toJSON().substring(0, 10).replace(/-/g,'') + new Date().toTimeString().substring(0,8).replace(/:/g,'');
       wx.request({
         url: "http://www.bayescience.com/api/analysis",
@@ -212,13 +192,13 @@ Page({
       },
         method: "POST",
         success: function(a) {
-            var data=JSON.parse(a.data.data)
-          console.log(data);
-          if (console.log("识别的结果："), console.log(a),
+        console.log(a);
+        var data=JSON.parse(a.data.data);
+          if (console.log("识别的结果："),
           200 == a.data.code) {
               var n;
               o.setData((n = {}, 
-              t(n, "display2", "none"),  t(n, "cuttongue", data.cutTongue), 
+              t(n, "display2", "none"),  t(n, "cuttongue", data.cutTongue), t(n, "display1", "block"), 
               t(n, "cha1", data.char[0].probability), t(n, "cha2", data.char[1].probability), t(n, "cha3", data.char[2].probability), 
               t(n, "cha4", data.char[4].probability), t(n, "cha5", data.char[4].probability), t(n, "cha6", data.char[5].probability), 
               t(n, "cha7", data.char[6].probability), t(n, "cha8", data.char[7].probability), t(n, "cha9", data.char[8].probability), 
@@ -228,12 +208,14 @@ Page({
               t(n, "yytl", data.tiaoli.yinyuetiaoli), t(n, "jlbj", data.tiaoli.jingluobaojian), t(n, "yyjj", data.tiaoli.yaowuyangsheng), 
               t(n, "sl1", data.tiaoli.shiliao[0]), t(n, "sl2", data.tiaoli.shiliao[1]), t(n, "sl3", data.tiaoli.shiliao[2]), 
               t(n, "sl4", data.tiaoli.shiliao[3]),
-               n)),o.InsertData();
+               n)),this.setData({ display3: "block" }), wx.hideLoading(),o.InsertData(),
+               setTimeout(function () {
+                this.setData({display3: "none"});
+               }, 2e3);
           }
           else 400 == a.data.code ? (wx.hideLoading(), o.setData({  
             display4: "block"
-        }), setTimeout(function() {
-            console.log("执行了定时器"), o.setData({
+        }), setTimeout(function() {o.setData({
                 display4: "none"
             });
         }, 2e3)) : 500 == a.data.code ? (wx.hideLoading(), o.setData({
