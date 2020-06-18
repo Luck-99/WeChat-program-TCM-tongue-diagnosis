@@ -192,10 +192,10 @@ Page({
       },
         method: "POST",
         success: function(x) {
-        console.log(x);
+        console.log("识别的结果："),console.log(x);
         var data=JSON.parse(x.data.data);
-          if (console.log("识别的结果："),
-          200 == x.data.code) {
+          if (
+          200 == x.data.code && data.message!='图片质量过低') {
               var n;
               o.setData((n = {}, 
               t(n, "display2", "none"),  t(n, "cuttongue", data.cutTongue), t(n, "display1", "block"), 
@@ -257,11 +257,9 @@ Page({
                         showtimeout: !0
                     });
                 }
-            });setTimeout(function () {
-                this.setData({display3: "none"});
-               }, 2e3);
+            });
           }
-          else 400 == x.data.code ? (wx.hideLoading(), o.setData({  
+          else 400 == x.data.code || data.message=='图片质量过低' ? (wx.hideLoading(), o.setData({  
             display4: "block"
         }), setTimeout(function() {o.setData({
                 display4: "none"
